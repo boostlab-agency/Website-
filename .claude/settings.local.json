@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm -v)",
+      "PowerShell(node -v)",
+      "PowerShell(npm -v)",
+      "PowerShell(winget --version)",
+      "PowerShell(winget install OpenJS.NodeJS.LTS --silent --accept-package-agreements --accept-source-agreements)",
+      "Bash(cd \"/c/Users/JipSanders/OneDrive - Boost lab agency/Boostlab - Documenten/BOOSTLAB/boostlab website/Boostlab agency\" && mkdir -p assets/css assets/js assets/img cases insights && ls -la)"
+    ]
+  }
+}
