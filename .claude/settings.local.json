@@ -15,7 +15,12 @@
       "Bash(start \"\" \"boost-check.html\")",
       "Bash(python3 -c ' *)",
       "Bash(perl \"/c/Users/JIPSAN~1/AppData/Local/Temp/claude/c--Users-JipSanders-OneDrive---Boost-lab-agency-Boostlab---Documenten-BOOSTLAB-boostlab-website-Boostlab-agency/5ec059c2-f66f-4291-8b11-5796b81e5015/scratchpad/update-direct-doen.pl\" index.html over-ons.html diensten.html cases.html contact.html boost-check.html diensten/branding.html diensten/websites.html diensten/identiteit.html diensten/grafisch.html cases/coca-cola.html cases/spapens-kleeft.html cases/tremakids.html cases/interlude.html cases/fysiofit-hilvarenbeek.html cases/vloerenspecialist.html)",
-      "Bash(curl -s --max-time 10 -o /dev/null -w \"HTTP %{http_code}\\\\n\" \"https://commons.wikimedia.org/w/api.php?action=query&format=json\")"
+      "Bash(curl -s --max-time 10 -o /dev/null -w \"HTTP %{http_code}\\\\n\" \"https://commons.wikimedia.org/w/api.php?action=query&format=json\")",
+      "Bash(perl \"/c/Users/JIPSAN~1/AppData/Local/Temp/claude/c--Users-JipSanders-OneDrive---Boost-lab-agency-Boostlab---Documenten-BOOSTLAB-boostlab-website-Boostlab-agency/5ec059c2-f66f-4291-8b11-5796b81e5015/scratchpad/update-loader.pl\" index.html over-ons.html diensten.html cases.html contact.html prijzen.html boost-check.html diensten/branding.html diensten/websites.html diensten/identiteit.html diensten/grafisch.html cases/coca-cola.html cases/spapens-kleeft.html cases/tremakids.html cases/interlude.html cases/fysiofit-hilvarenbeek.html cases/vloerenspecialist.html cases/meridian-advies.html cases/northlane.html)",
+      "Bash(timeout 20 find \"/c/Users/JipSanders/OneDrive - Boost lab agency/Boostlab - Documenten/BOOSTLAB/boostlab website/Boostlab agency\" -maxdepth 2 -newer \"assets/img/logo-lime.png\" -type f)",
+      "Bash(timeout 20 find \"/c/Users/JIPSAN~1/AppData/Local/Temp/claude\" -newermt \"2026-08-04 14:00\" -type f 2>/dev/null | grep -v \"\\\\.git\")",
+      "Read(//c/Users/JIPSAN~1/AppData/Local/Temp/claude/**)",
+      "Bash(grep -n \"^\\\\.nav\\\\|^   NAV$\" assets/css/style.css)"
     ]
   }
 }

@@ -182,6 +182,10 @@
     if(resultEl){
       resultEl.hidden = false;
       resultEl.scrollIntoView({ behavior:'smooth', block:'start' });
+      requestAnimationFrame(function(){
+        resultEl.classList.add('is-visible');
+        document.querySelectorAll('.boost-result-card').forEach(function(card){ card.classList.add('is-visible'); });
+      });
     }
   }
 

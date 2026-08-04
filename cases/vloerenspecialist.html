@@ -11,24 +11,22 @@
 <body>
 <a href="#main" class="skip-link">Direct naar inhoud</a>
 <div class="page-transition"></div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 <div class="loader" aria-hidden="true">
-  <div class="loader__word"><span>B</span><span>o</span><span>o</span><span>s</span><span>t</span><span>&nbsp;</span><span>L</span><span>a</span><span>b</span></div>
+  <div class="loader__logo-wrap"><img src="../assets/img/logo-lime.png" alt="Boost Lab Agency" class="loader__logo"></div>
   <div class="loader__bar"></div>
 </div>
 <div class="grain" aria-hidden="true"></div>
 
 <header class="nav">
-  <a href="../index.html" class="nav__logo logo-anim" data-cursor="Home"><img src="../assets/img/logo-dark.png" alt="Boost Lab Agency" class="logo-img"></a>
-  <div class="nav__cta">
-    <a href="../contact.html" class="btn btn--lime magnetic" data-cursor="Praten"><span>Plan gesprek</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-    </a>
-    <button class="menu-toggle" aria-label="Menu openen" aria-expanded="false" aria-controls="megaMenu" id="navToggle">
+  <button class="menu-toggle" aria-label="Menu openen" aria-expanded="false" aria-controls="megaMenu" id="navToggle">
       <span class="menu-toggle__bars"><span class="menu-toggle__bar"></span><span class="menu-toggle__bar"></span></span>
       <span class="menu-toggle__text">Menu</span>
     </button>
-
-  </div>
+  <a href="../index.html" class="nav__logo logo-anim" data-cursor="Home"><img src="../assets/img/logo-dark.png" alt="Boost Lab Agency" class="logo-img"></a>
+  <a href="../contact.html" class="btn btn--lime magnetic" data-cursor="Praten"><span>Plan gesprek</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+    </a>
 </header>
 
 <div class="mega-menu" id="megaMenu" aria-hidden="true">
@@ -41,7 +39,7 @@
         <p class="mega-menu__label">Pagina's</p>
         <nav class="mega-menu__links">
           <a href="../index.html">Home</a>
-          <a href="../diensten.html">Diensten</a>
+          <a href="../diensten.html">Wat we doen</a>
           <a href="../prijzen.html">Prijzen</a>
           <a href="../cases.html">Cases</a>
           <a href="../boost-check.html">Boost Check</a>
@@ -77,6 +75,18 @@
 
 
 
+<nav class="story-rail" aria-hidden="true">
+  <div class="story-rail__track"><div class="story-rail__fill" id="storyFill"></div></div>
+  <div class="story-rail__items">
+    <a href="#introductie" class="story-rail__item" data-story="introductie"><span class="story-rail__dot"></span><span>Intro</span></a>
+    <a href="#uitdaging" class="story-rail__item" data-story="uitdaging"><span class="story-rail__dot"></span><span>Uitdaging</span></a>
+    <a href="#aanpak" class="story-rail__item" data-story="aanpak"><span class="story-rail__dot"></span><span>Aanpak</span></a>
+    <a href="#resultaat" class="story-rail__item" data-story="resultaat"><span class="story-rail__dot"></span><span>Resultaat</span></a>
+    <a href="#impressie" class="story-rail__item" data-story="impressie"><span class="story-rail__dot"></span><span>Impressie</span></a>
+    <a href="#volgende-stap" class="story-rail__item" data-story="volgende-stap"><span class="story-rail__dot"></span><span>Vervolg</span></a>
+  </div>
+</nav>
+
 <main id="main">
 
   <section class="section" style="padding-top:clamp(8rem,16vw,11rem); padding-bottom:2rem; position:relative; overflow:hidden;">
@@ -101,38 +111,38 @@
     </div>
   </div>
 
-  <section class="section" style="padding-bottom:2rem;">
+  <section class="section" id="introductie" style="padding-bottom:2rem;">
     <div class="wrap grid-2">
-      <div data-reveal><p class="eyebrow">Intro</p><h2 style="font-size:var(--fs-h2);">1.800 m² showroom, verouderde website.</h2></div>
+      <div data-reveal><p class="eyebrow">01 — Introductie</p><h2 style="font-size:var(--fs-h2);">1.800 m² showroom, verouderde website.</h2></div>
       <p class="lead" data-reveal>Vloerenspecialist Tilburg is dé woonspecialist voor vloeren, raamdecoratie, behang en interieur-op-maat, met een showroom van ruim 1.800 m² en meer dan 60 topmerken. Hun oude website sloot niet meer aan bij die professionele uitstraling.</p>
     </div>
   </section>
 
-  <section class="section" style="padding-top:0;">
-    <div class="wrap"><p class="eyebrow" data-reveal>Visual gallery</p></div>
-    <div class="wrap gallery-grid" data-stagger>
-      <div class="gallery-grid__item"><img src="../assets/img/case-vloerenspecialist.jpg" alt="Categorienavigatie Vloerenspecialist Tilburg" loading="lazy"></div>
-      <div class="gallery-grid__item"><img src="../assets/img/vloeren-new-1.jpg" alt="Website detail Vloerenspecialist Tilburg" loading="lazy"></div>
+  <section class="section" id="uitdaging" style="padding-block:0 2rem;">
+    <div class="wrap grid-2">
+      <div data-reveal><p class="eyebrow">02 — Uitdaging</p><h2 style="font-size:var(--fs-h2);">Een enorm aanbod, geen overzicht.</h2></div>
+      <p class="lead" data-reveal>De oude website draaide op een verouderd systeem, was traag en kon het enorme assortiment niet overzichtelijk tonen. Bezoekers moesten sneller bij vloeren, raamdecoratie of interieur-op-maat uitkomen dan in de fysieke winkel.</p>
     </div>
   </section>
 
-  <section class="section bg-paper-dim">
+  <section class="section bg-paper-dim" id="aanpak">
     <div class="wrap" style="display:flex; flex-direction:column; gap:3rem;">
+      <p class="eyebrow" data-reveal>03 — Aanpak</p>
       <div class="grid-2" data-reveal>
-        <p class="eyebrow">01 — UX &amp; structuur</p>
-        <p style="font-size:1.1rem; line-height:1.7;">De belangrijkste uitdaging: een website die het enorme assortiment overzichtelijk toont en bezoekers direct naar vloeren, raamdecoratie of interieur-op-maat stuurt. Daarom ontwikkelden we een heldere navigatie met grote categorieën, Vloeren, Raamdecoratie, Interieur op maat, Behang, Showroom, die naadloos aansluit op de fysieke winkelindeling.</p>
+        <p class="eyebrow">UX &amp; structuur</p>
+        <p style="font-size:1.1rem; line-height:1.7;">We ontwikkelden een heldere navigatie met grote categorieën, Vloeren, Raamdecoratie, Interieur op maat, Behang, Showroom, die naadloos aansluit op de fysieke winkelindeling.</p>
       </div>
       <div class="grid-2" data-reveal>
-        <p class="eyebrow">02 — Techniek &amp; onderhoud</p>
-        <p style="font-size:1.1rem; line-height:1.7;">De oude website draaide op een verouderd systeem. Wij migreerden naar een actueel CMS, verbeterden de laadsnelheid enorm en optimaliseerden beveiliging en caching. Boost Lab verzorgt sindsdien het doorlopend onderhoud, zodat de site veilig, snel en up-to-date blijft.</p>
+        <p class="eyebrow">Techniek &amp; onderhoud</p>
+        <p style="font-size:1.1rem; line-height:1.7;">Wij migreerden naar een actueel CMS, verbeterden de laadsnelheid enorm en optimaliseerden beveiliging en caching. Boost Lab verzorgt sindsdien het doorlopend onderhoud, zodat de site veilig, snel en up-to-date blijft.</p>
       </div>
     </div>
   </section>
 
-  <section class="section bg-ink" style="position:relative; overflow:hidden;">
+  <section class="section bg-ink" id="resultaat" style="position:relative; overflow:hidden;">
     <div class="blob-field" aria-hidden="true"><div class="blob" style="width:30vw;height:30vw;background:var(--coral);bottom:-14%;left:-8%;"></div></div>
     <div class="wrap" style="position:relative;">
-      <p class="eyebrow" data-reveal>Wat we deden</p>
+      <p class="eyebrow" data-reveal>04 — Resultaat</p>
       <h2 style="font-size:var(--fs-h2); max-width:20ch; margin-bottom:2.5rem;" data-split>Van verouderd naar toekomstbestendig.</h2>
       <div style="display:flex; gap:.7rem; flex-wrap:wrap;" data-stagger>
         <span class="chip" style="border-color:var(--ink-line); color:var(--paper);">Website redesign</span>
@@ -142,6 +152,34 @@
         <span class="chip" style="border-color:var(--ink-line); color:var(--paper);">Doorlopend onderhoud</span>
       </div>
       <p class="lead" style="margin-top:2rem; color:var(--text-on-ink-70);">Een website die net zo overtuigt als de showroom zelf, en die al maanden probleemloos meedraait.</p>
+    </div>
+  </section>
+
+  <section class="section" id="impressie" style="padding-top:0;">
+    <div class="wrap"><p class="eyebrow" data-reveal>05 — Visuele impressie</p></div>
+    <div class="wrap" data-reveal-scale>
+      <div class="case-slider" data-case-slider>
+        <div class="case-slider__track">
+          <div class="case-slider__slide"><img src="../assets/img/case-vloerenspecialist.jpg" alt="Categorienavigatie Vloerenspecialist Tilburg" loading="lazy"></div>
+          <div class="case-slider__slide"><img src="../assets/img/vloeren-new-1.jpg" alt="Website detail Vloerenspecialist Tilburg" loading="lazy"></div>
+        </div>
+        <button type="button" class="case-slider__arrow case-slider__arrow--prev" aria-label="Vorige foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <button type="button" class="case-slider__arrow case-slider__arrow--next" aria-label="Volgende foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <div class="case-slider__dots"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="volgende-stap" style="text-align:center;">
+    <div class="wrap">
+      <p class="eyebrow" style="justify-content:center;" data-reveal>06 — Volgende stap</p>
+      <h2 style="font-size:var(--fs-h1); max-width:20ch; margin-inline:auto;" data-reveal>Laten we ook <span class="text-gradient">jouw merk</span> een boost geven.</h2>
+      <div style="margin-top:2rem; display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;" data-reveal>
+        <a href="../contact.html#offerte" class="btn btn--gradient magnetic" data-cursor="Start"><span>Start een project</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+        <a href="../cases.html" class="btn btn--ghost magnetic" data-cursor="Bekijk"><span>Bekijk meer werk</span></a>
+      </div>
     </div>
   </section>
 
@@ -173,7 +211,7 @@
       <p style="max-width:32ch; color:var(--text-on-ink-70); font-size:var(--fs-small);">Het groei-laboratorium voor merken die niet stil willen zitten.</p>
     </div>
     <div class="footer__col"><h4>Sitemap</h4><ul>
-      <li><a href="../over-ons.html">Over ons</a></li><li><a href="../diensten.html">Diensten</a></li><li><a href="../cases.html">Cases</a></li><li><a href="../prijzen.html">Prijzen</a></li><li><a href="../boost-check.html">Boost Check</a></li>
+      <li><a href="../over-ons.html">Over ons</a></li><li><a href="../diensten.html">Wat we doen</a></li><li><a href="../cases.html">Cases</a></li><li><a href="../prijzen.html">Prijzen</a></li><li><a href="../boost-check.html">Boost Check</a></li>
     </ul></div>
     <div class="footer__col"><h4>Diensten</h4><ul>
       <li><a href="../diensten/branding.html">Branding</a></li><li><a href="../diensten/websites.html">Websites</a></li><li><a href="../diensten/identiteit.html">Identiteit</a></li><li><a href="../diensten/grafisch.html">Grafisch</a></li>
@@ -189,6 +227,8 @@
 </footer>
 
 <script src="../assets/js/core.js"></script>
+<script src="../assets/js/case-slider.js"></script>
+<script src="../assets/js/case-scroll.js"></script>
 <a class="whatsapp-fab" href="https://wa.me/31642822966?text=Hoi%20BoostLab%2C%20ik%20ben%20benieuwd%20wat%20jullie%20voor%20mijn%20bedrijf%20kunnen%20betekenen." target="_blank" rel="noopener" aria-label="Stel je vraag via WhatsApp" data-tooltip="Stel je vraag via WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.1c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.16-4.94-4.35-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.28.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.83 2 .9 2.14.07.14.11.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.61-.07.16-.19.7-.82.89-1.1.19-.28.37-.23.62-.14.26.09 1.63.77 1.91.91.28.14.46.21.53.33.07.12.07.68-.17 1.35Z"/></svg>
 </a>

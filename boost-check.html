@@ -34,22 +34,20 @@
 <a href="#main" class="skip-link">Direct naar inhoud</a>
 <div class="page-transition"></div>
 <div class="loader" aria-hidden="true">
-  <div class="loader__word"><span>B</span><span>o</span><span>o</span><span>s</span><span>t</span><span>&nbsp;</span><span>L</span><span>a</span><span>b</span></div>
+  <div class="loader__logo-wrap"><img src="assets/img/logo-lime.png" alt="Boost Lab Agency" class="loader__logo"></div>
   <div class="loader__bar"></div>
 </div>
 <div class="grain" aria-hidden="true"></div>
 
 <header class="nav">
-  <a href="index.html" class="nav__logo logo-anim" data-cursor="Home"><img src="assets/img/logo-dark.png" alt="Boost Lab Agency" class="logo-img"></a>
-  <div class="nav__cta">
-    <a href="contact.html" class="btn btn--lime magnetic" data-cursor="Praten"><span>Plan gesprek</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-    </a>
-    <button class="menu-toggle" aria-label="Menu openen" aria-expanded="false" aria-controls="megaMenu" id="navToggle">
+  <button class="menu-toggle" aria-label="Menu openen" aria-expanded="false" aria-controls="megaMenu" id="navToggle">
       <span class="menu-toggle__bars"><span class="menu-toggle__bar"></span><span class="menu-toggle__bar"></span></span>
       <span class="menu-toggle__text">Menu</span>
     </button>
-  </div>
+  <a href="index.html" class="nav__logo logo-anim" data-cursor="Home"><img src="assets/img/logo-dark.png" alt="Boost Lab Agency" class="logo-img"></a>
+  <a href="contact.html" class="btn btn--lime magnetic" data-cursor="Praten"><span>Plan gesprek</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+    </a>
 </header>
 
 <div class="mega-menu" id="megaMenu" aria-hidden="true">
@@ -62,7 +60,7 @@
         <p class="mega-menu__label">Pagina's</p>
         <nav class="mega-menu__links">
           <a href="index.html">Home</a>
-          <a href="diensten.html">Diensten</a>
+          <a href="diensten.html">Wat we doen</a>
           <a href="prijzen.html">Prijzen</a>
           <a href="cases.html">Cases</a>
           <a href="boost-check.html" class="is-active">Boost Check</a>
@@ -244,19 +242,28 @@
         <h2 id="quizResultTitle" style="font-size:var(--fs-h2);"></h2>
         <p class="lead" id="quizResultDesc" style="margin-inline:auto; margin-top:1rem;"></p>
 
-        <div class="grid-2" style="text-align:left; margin-top:clamp(2rem,4vw,2.8rem); max-width:44rem; margin-inline:auto; gap:clamp(1.6rem,3vw,2.5rem);">
-          <div>
-            <p class="eyebrow">Sterke punten</p>
+        <div class="grid-3 boost-result-grid" id="quizResultCards" style="margin-top:clamp(2.2rem,4vw,3rem);">
+          <div class="card boost-result-card boost-result-card--strengths">
+            <div class="boost-result-card__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3 class="boost-result-card__title">Sterke punten</h3>
             <ul class="quiz-result__advice" id="quizResultStrengths"></ul>
           </div>
-          <div>
-            <p class="eyebrow">Verbeterpunten</p>
+          <div class="card boost-result-card boost-result-card--improvements">
+            <div class="boost-result-card__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+            </div>
+            <h3 class="boost-result-card__title">Verbeterpunten</h3>
             <ul class="quiz-result__advice" id="quizResultImprovements"></ul>
           </div>
-        </div>
-        <div style="text-align:left; max-width:44rem; margin-inline:auto; margin-top:clamp(1.6rem,3vw,2.2rem);">
-          <p class="eyebrow">Aanbevelingen</p>
-          <ul class="quiz-result__advice" id="quizResultAdvice"></ul>
+          <div class="card boost-result-card boost-result-card--advice">
+            <div class="boost-result-card__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/><circle cx="12" cy="12" r="4"/></svg>
+            </div>
+            <h3 class="boost-result-card__title">Aanbevelingen</h3>
+            <ul class="quiz-result__advice" id="quizResultAdvice"></ul>
+          </div>
         </div>
 
         <div class="card" style="margin-top:clamp(2.5rem,5vw,3.5rem); text-align:left; max-width:34rem; margin-inline:auto; padding:clamp(1.8rem,3vw,2.6rem);">
@@ -303,7 +310,7 @@
       <p style="max-width:32ch; color:var(--text-on-ink-70); font-size:var(--fs-small);">Het groei-laboratorium voor merken die niet stil willen zitten.</p>
     </div>
     <div class="footer__col"><h4>Sitemap</h4><ul>
-      <li><a href="over-ons.html">Over ons</a></li><li><a href="diensten.html">Diensten</a></li><li><a href="cases.html">Cases</a></li><li><a href="prijzen.html">Prijzen</a></li><li><a href="boost-check.html">Boost Check</a></li>
+      <li><a href="over-ons.html">Over ons</a></li><li><a href="diensten.html">Wat we doen</a></li><li><a href="cases.html">Cases</a></li><li><a href="prijzen.html">Prijzen</a></li><li><a href="boost-check.html">Boost Check</a></li>
     </ul></div>
     <div class="footer__col"><h4>Diensten</h4><ul>
       <li><a href="diensten/branding.html">Branding</a></li><li><a href="diensten/websites.html">Websites</a></li><li><a href="diensten/identiteit.html">Identiteit</a></li><li><a href="diensten/grafisch.html">Grafisch</a></li>

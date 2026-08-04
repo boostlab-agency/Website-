@@ -1,0 +1,9 @@
+# Bron-/ontwerpbestanden die niet als website-asset bedoeld zijn.
+# Deze horen niet in git: het zijn vaak zeer grote bestanden (tientallen tot
+# honderden MB) die GitHub's pushlimiet (100 MB per bestand) overschrijden.
+# Converteer ze naar geoptimaliseerde .jpg/.png in assets/img/ voor gebruik
+# op de site, en laat het bronbestand buiten de repository.
+assets/img/*.pdf
+assets/img/*.ai
+assets/img/*.psd
+assets/img/*.eps
