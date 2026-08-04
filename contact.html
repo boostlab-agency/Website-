@@ -18,22 +18,64 @@
 <div class="grain" aria-hidden="true"></div>
 
 <header class="nav">
-  <a href="index.html" class="nav__logo magnetic" data-cursor="Home"><img src="assets/img/logo-dark.png" alt="Boost Lab Agency" class="logo-img"></a>
-  <nav class="nav__links" id="navLinks">
-    <a href="index.html">Home</a>
-    <a href="over-ons.html">Over ons</a>
-    <a href="diensten.html">Diensten</a>
-    <a href="cases.html">Cases</a>
-    <a href="insights.html">Insights</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <a href="index.html" class="nav__logo logo-anim" data-cursor="Home"><img src="assets/img/logo-dark.png" alt="Boost Lab Agency" class="logo-img"></a>
   <div class="nav__cta">
     <a href="contact.html" class="btn btn--lime magnetic" data-cursor="Praten"><span>Plan gesprek</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
     </a>
-    <button class="nav__toggle" aria-label="Menu" id="navToggle"><span></span><span></span><span></span></button>
+    <button class="menu-toggle" aria-label="Menu openen" aria-expanded="false" aria-controls="megaMenu" id="navToggle">
+      <span class="menu-toggle__bars"><span class="menu-toggle__bar"></span><span class="menu-toggle__bar"></span></span>
+      <span class="menu-toggle__text">Menu</span>
+    </button>
+
   </div>
 </header>
+
+<div class="mega-menu" id="megaMenu" aria-hidden="true">
+  <button class="mega-menu__close" id="megaMenuClose" aria-label="Menu sluiten">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+  </button>
+  <div class="wrap">
+    <div class="mega-menu__inner">
+      <div>
+        <p class="mega-menu__label">Pagina's</p>
+        <nav class="mega-menu__links">
+          <a href="index.html">Home</a>
+          <a href="diensten.html">Diensten</a>
+          <a href="prijzen.html">Prijzen</a>
+          <a href="cases.html">Cases</a>
+          <a href="boost-check.html">Boost Check</a>
+          <a href="over-ons.html">Over BoostLab</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <p class="mega-menu__label">Direct doen</p>
+        <nav class="mega-menu__links mega-menu__links--secondary">
+          <a href="contact.html#plannen">Plan een gesprek</a>
+          <a href="contact.html">Start een project</a>
+          <a href="boost-check.html">Doe de Boost Check</a>
+          <a href="contact.html#offerte">Vraag een offerte aan</a>
+          <a href="cases.html">Bekijk werk</a>
+        </nav>
+      </div>
+      <div class="mega-menu__card">
+        <span class="chip chip--lime" style="align-self:flex-start;">Boost Check</span>
+        <h3>Ontdek hoe sterk jouw merk, website en marketing werkelijk zijn.</h3>
+        <a href="boost-check.html" class="btn btn--lime magnetic" data-cursor="Start"><span>Start de Boost Check</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="mega-menu__footer">
+    <span>jip@boostlab-agency.nl</span>
+    <span>+31 6 42 82 29 66</span>
+    <span>Tilburg</span>
+  </div>
+</div>
+
+
 
 <main id="main">
 
@@ -101,8 +143,7 @@
         </div>
       </div>
 
-      <form data-reveal id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
-        <!-- Vervang YOUR_FORM_ID door een echt Formspree-formulier (of eigen backend) voor te werken verzending. -->
+      <form data-reveal id="contactForm" action="mailto:jip@boostlab-agency.nl" method="POST" enctype="text/plain" novalidate>
         <div class="grid-2" style="gap:1.2rem;">
           <div class="field"><label for="name">Naam *</label><input type="text" id="name" name="name" placeholder="Je volledige naam" required></div>
           <div class="field"><label for="email">E-mail *</label><input type="email" id="email" name="email" placeholder="jij@bedrijf.nl" required></div>
@@ -124,8 +165,8 @@
             <option value="">Kies een dienst</option>
             <option>Branding</option>
             <option>Websites</option>
-            <option>Marketing</option>
-            <option>Content Creatie</option>
+            <option>Identiteit</option>
+            <option>Grafisch</option>
             <option>Een combinatie</option>
           </select>
         </div>
@@ -138,17 +179,18 @@
     </div>
   </section>
 
-  <!-- CALENDLY -->
+  <!-- KENNISMAKINGSGESPREK -->
   <section class="section" id="plannen">
-    <div class="wrap">
-      <p class="eyebrow" data-reveal>Kennismakingsgesprek</p>
-      <h2 style="font-size:var(--fs-h2); max-width:16ch;" data-split>Kies zelf een moment dat uitkomt.</h2>
-      <p class="lead" style="margin-top:1rem;" data-reveal>Dertig minuten, geen verkooppraatje — gewoon checken of er een klik is.</p>
+    <div class="wrap" style="text-align:center;">
+      <p class="eyebrow" style="justify-content:center;" data-reveal>Kennismakingsgesprek</p>
+      <h2 style="font-size:var(--fs-h2); max-width:18ch; margin-inline:auto;" data-split>Kies zelf een moment dat uitkomt.</h2>
+      <p class="lead" style="margin-top:1rem; max-width:44ch; margin-inline:auto;" data-reveal>Dertig minuten, geen verkooppraatje, gewoon checken of er een klik is. Bel of mail ons, dan plannen we het meteen in.</p>
 
-      <div class="card" style="margin-top:2.4rem; padding:0; overflow:hidden;" data-reveal-scale>
-        <!-- Calendly inline widget — vervang data-url door de echte Boost Lab Calendly-link -->
-        <div class="calendly-inline-widget" data-url="https://calendly.com/boostlab-agency/kennismaking" style="min-width:280px; height:700px;"></div>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <div style="margin-top:2.4rem; display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;" data-reveal>
+        <a href="tel:+31642822966" class="btn btn--lime magnetic" data-cursor="Bellen"><span>Bel +31 6 42 82 29 66</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+        <a href="mailto:jip@boostlab-agency.nl" class="btn btn--ghost magnetic" data-cursor="Mailen"><span>Mail jip@boostlab-agency.nl</span></a>
       </div>
     </div>
   </section>
@@ -166,7 +208,7 @@
       </div>
       <div data-reveal>
         <h3 style="font-size:1.1rem;">Studio</h3>
-        <p style="margin-top:.6rem; color:var(--text-on-paper-70);">Overtoom 123, 1054 HD Amsterdam</p>
+        <p style="margin-top:.6rem; color:var(--text-on-paper-70);">Tilburg, 5038 NM</p>
         <div class="social-row">
           <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" data-cursor="Volg"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
           <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" data-cursor="Volg"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="8" y1="11" x2="8" y2="16"/><line x1="8" y1="8" x2="8" y2="8"/><path d="M12 16v-3a2 2 0 0 1 4 0v3"/></svg></a>
@@ -196,10 +238,10 @@
       <p style="max-width:32ch; color:var(--text-on-ink-70); font-size:var(--fs-small);">Het groei-laboratorium voor merken die niet stil willen zitten.</p>
     </div>
     <div class="footer__col"><h4>Sitemap</h4><ul>
-      <li><a href="over-ons.html">Over ons</a></li><li><a href="diensten.html">Diensten</a></li><li><a href="cases.html">Cases</a></li><li><a href="insights.html">Insights</a></li>
+      <li><a href="over-ons.html">Over ons</a></li><li><a href="diensten.html">Diensten</a></li><li><a href="cases.html">Cases</a></li><li><a href="prijzen.html">Prijzen</a></li><li><a href="boost-check.html">Boost Check</a></li>
     </ul></div>
     <div class="footer__col"><h4>Diensten</h4><ul>
-      <li><a href="diensten.html#branding">Branding</a></li><li><a href="diensten.html#websites">Websites</a></li><li><a href="diensten.html#identiteit">Identiteit</a></li><li><a href="diensten.html#grafisch">Grafisch</a></li>
+      <li><a href="diensten/branding.html">Branding</a></li><li><a href="diensten/websites.html">Websites</a></li><li><a href="diensten/identiteit.html">Identiteit</a></li><li><a href="diensten/grafisch.html">Grafisch</a></li>
     </ul></div>
     <div class="footer__col"><h4>Contact</h4><ul>
       <li><a href="mailto:jip@boostlab-agency.nl">jip@boostlab-agency.nl</a></li><li><a href="tel:+31642822966">+31 6 42 82 29 66</a></li><li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -213,5 +255,9 @@
 
 <script src="assets/js/core.js"></script>
 <script src="assets/js/contact.js"></script>
+<a class="whatsapp-fab" href="https://wa.me/31642822966?text=Hoi%20BoostLab%2C%20ik%20ben%20benieuwd%20wat%20jullie%20voor%20mijn%20bedrijf%20kunnen%20betekenen." target="_blank" rel="noopener" aria-label="Stel je vraag via WhatsApp" data-tooltip="Stel je vraag via WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.1c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.16-4.94-4.35-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.28.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.83 2 .9 2.14.07.14.11.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.61-.07.16-.19.7-.82.89-1.1.19-.28.37-.23.62-.14.26.09 1.63.77 1.91.91.28.14.46.21.53.33.07.12.07.68-.17 1.35Z"/></svg>
+</a>
+
 </body>
 </html>

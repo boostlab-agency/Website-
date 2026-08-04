@@ -30,11 +30,13 @@
       var required = form.querySelectorAll('[required]');
       var valid = true;
       required.forEach(function(f){ if(!f.value.trim()) valid = false; });
+      var status = document.getElementById('formStatus');
       if(!valid){
         e.preventDefault();
-        var status = document.getElementById('formStatus');
         if(status){ status.textContent = 'Vul alle verplichte velden in.'; status.className = 'form-status is-error'; }
+        return;
       }
+      if(status){ status.textContent = 'Je e-mailprogramma opent zo met dit bericht klaar om te versturen.'; status.className = 'form-status is-success'; }
     });
   }
 })();

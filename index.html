@@ -7,6 +7,47 @@
 <meta name="description" content="Boost Lab Agency combineert branding, websites, identiteit en grafisch ontwerp in één lab. Gebouwd op strategie, gemaakt met lef, gemeten op resultaat.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%230E0E12%22/><circle cx=%2250%22 cy=%2244%22 r=%2216%22 fill=%22%23CCFF66%22/></svg>">
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="canonical" href="https://boostlab-agency.nl/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Boost Lab Agency — Het groei-laboratorium voor ambitieuze merken">
+<meta property="og:description" content="Boost Lab Agency combineert branding, websites, identiteit en grafisch ontwerp in één lab. Gebouwd op strategie, gemaakt met lef, gemeten op resultaat.">
+<meta property="og:url" content="https://boostlab-agency.nl/">
+<meta property="og:image" content="https://boostlab-agency.nl/assets/img/logo.png">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:site_name" content="Boost Lab Agency">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Boost Lab Agency — Het groei-laboratorium voor ambitieuze merken">
+<meta name="twitter:description" content="Boost Lab Agency combineert branding, websites, identiteit en grafisch ontwerp in één lab.">
+<meta name="twitter:image" content="https://boostlab-agency.nl/assets/img/logo.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Boost Lab Agency",
+  "image": "https://boostlab-agency.nl/assets/img/logo.png",
+  "url": "https://boostlab-agency.nl/",
+  "email": "jip@boostlab-agency.nl",
+  "telephone": "+31642822966",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Tilburg",
+    "postalCode": "5038 NM",
+    "addressCountry": "NL"
+  },
+  "areaServed": "NL",
+  "description": "Boost Lab Agency is een creatief lab in Tilburg voor branding, websites, identiteit en grafisch ontwerp.",
+  "sameAs": [
+    "https://instagram.com",
+    "https://linkedin.com"
+  ],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Branding" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Websites" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Identiteit" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Grafisch ontwerp" } }
+  ]
+}
+</script>
 </head>
 <body>
 <a href="#main" class="skip-link">Direct naar inhoud</a>
@@ -18,25 +59,67 @@
 <div class="grain" aria-hidden="true"></div>
 
 <header class="nav">
-  <a href="index.html" class="nav__logo magnetic" data-cursor="Home">
+  <a href="index.html" class="nav__logo logo-anim" data-cursor="Home">
     <img src="assets/img/logo-dark.png" alt="Boost Lab Agency" class="logo-img">
   </a>
-  <nav class="nav__links" id="navLinks">
-    <a href="index.html">Home</a>
-    <a href="over-ons.html">Over ons</a>
-    <a href="diensten.html">Diensten</a>
-    <a href="cases.html">Cases</a>
-    <a href="insights.html">Insights</a>
-    <a href="contact.html">Contact</a>
-  </nav>
   <div class="nav__cta">
     <a href="contact.html" class="btn btn--lime magnetic" data-cursor="Praten">
       <span>Plan gesprek</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
     </a>
-    <button class="nav__toggle" aria-label="Menu" id="navToggle"><span></span><span></span><span></span></button>
+    <button class="menu-toggle" aria-label="Menu openen" aria-expanded="false" aria-controls="megaMenu" id="navToggle">
+      <span class="menu-toggle__bars"><span class="menu-toggle__bar"></span><span class="menu-toggle__bar"></span></span>
+      <span class="menu-toggle__text">Menu</span>
+    </button>
+
   </div>
 </header>
+
+<div class="mega-menu" id="megaMenu" aria-hidden="true">
+  <button class="mega-menu__close" id="megaMenuClose" aria-label="Menu sluiten">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+  </button>
+  <div class="wrap">
+    <div class="mega-menu__inner">
+      <div>
+        <p class="mega-menu__label">Pagina's</p>
+        <nav class="mega-menu__links">
+          <a href="index.html">Home</a>
+          <a href="diensten.html">Diensten</a>
+          <a href="prijzen.html">Prijzen</a>
+          <a href="cases.html">Cases</a>
+          <a href="boost-check.html">Boost Check</a>
+          <a href="over-ons.html">Over BoostLab</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <p class="mega-menu__label">Direct doen</p>
+        <nav class="mega-menu__links mega-menu__links--secondary">
+          <a href="contact.html#plannen">Plan een gesprek</a>
+          <a href="contact.html">Start een project</a>
+          <a href="boost-check.html">Doe de Boost Check</a>
+          <a href="contact.html#offerte">Vraag een offerte aan</a>
+          <a href="cases.html">Bekijk werk</a>
+        </nav>
+      </div>
+      <div class="mega-menu__card">
+        <span class="chip chip--lime" style="align-self:flex-start;">Boost Check</span>
+        <h3>Ontdek hoe sterk jouw merk, website en marketing werkelijk zijn.</h3>
+        <a href="boost-check.html" class="btn btn--lime magnetic" data-cursor="Start"><span>Start de Boost Check</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="mega-menu__footer">
+    <span>jip@boostlab-agency.nl</span>
+    <span>+31 6 42 82 29 66</span>
+    <span>Tilburg</span>
+  </div>
+</div>
+
+
 
 <main id="main">
 
@@ -100,29 +183,29 @@
           <p class="eyebrow" data-reveal>Wat we doen</p>
           <h2 style="font-size:var(--fs-h2); max-width:14ch;" data-split>Eén lab. Alle disciplines.</h2>
         </div>
-        <p class="lead" data-reveal>Geen los verkochte diensten, maar één team dat strategie, design en marketing samensmelt tot een merk dat klopt — van binnen én van buiten.</p>
+        <p class="lead" data-reveal>Geen los verkochte diensten, maar één team dat strategie, design en marketing samensmelt tot een merk dat klopt, van binnen én van buiten.</p>
       </div>
 
       <div class="grid-4" data-stagger>
-        <a href="diensten.html#branding" class="card magnetic" data-cursor="Ontdek">
+        <a href="diensten/branding.html" class="card magnetic" data-cursor="Ontdek">
           <div class="num">01</div>
           <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="margin-block:1.2rem;"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
           <h3 style="font-size:1.25rem;">Branding</h3>
-          <p class="text-on-paper-70" style="margin-top:.6rem; color:var(--text-on-paper-70); font-size:var(--fs-small);">Positionering en verhaal die blijft hangen — van naam tot toon.</p>
+          <p class="text-on-paper-70" style="margin-top:.6rem; color:var(--text-on-paper-70); font-size:var(--fs-small);">Positionering en verhaal die blijft hangen, van naam tot toon.</p>
         </a>
-        <a href="diensten.html#websites" class="card magnetic" data-cursor="Ontdek">
+        <a href="diensten/websites.html" class="card magnetic" data-cursor="Ontdek">
           <div class="num">02</div>
           <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="margin-block:1.2rem;"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><circle cx="6.5" cy="6.5" r=".6" fill="currentColor"/></svg>
           <h3 style="font-size:1.25rem;">Websites</h3>
           <p style="margin-top:.6rem; color:var(--text-on-paper-70); font-size:var(--fs-small);">Design en development die converteert, niet alleen oogt.</p>
         </a>
-        <a href="diensten.html#identiteit" class="card magnetic" data-cursor="Ontdek">
+        <a href="diensten/identiteit.html" class="card magnetic" data-cursor="Ontdek">
           <div class="num">03</div>
           <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="margin-block:1.2rem;"><circle cx="8" cy="8" r="4"/><circle cx="16" cy="8" r="4"/><circle cx="12" cy="16" r="4"/></svg>
           <h3 style="font-size:1.25rem;">Identiteit</h3>
           <p style="margin-top:.6rem; color:var(--text-on-paper-70); font-size:var(--fs-small);">Eén visueel systeem, overal consistent toegepast.</p>
         </a>
-        <a href="diensten.html#grafisch" class="card magnetic" data-cursor="Ontdek">
+        <a href="diensten/grafisch.html" class="card magnetic" data-cursor="Ontdek">
           <div class="num">04</div>
           <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="margin-block:1.2rem;"><path d="M4 4h11l5 5v11H4Z"/><path d="M15 4v5h5"/></svg>
           <h3 style="font-size:1.25rem;">Grafisch</h3>
@@ -233,74 +316,121 @@
   </section>
 
   <!-- WERKWIJZE -->
-  <section class="section">
+  <section class="section" id="werkwijze">
     <div class="wrap">
       <p class="eyebrow" data-reveal>Werkwijze</p>
       <h2 style="font-size:var(--fs-h2); max-width:16ch; margin-bottom:clamp(2.5rem,5vw,4rem);" data-split>Van formule tot resultaat, in vier stappen.</h2>
 
-      <div style="display:flex; flex-direction:column;" data-stagger>
-        <div class="hairline-top" style="display:grid; grid-template-columns:80px 1fr 1fr; gap:2rem; padding-block:2.2rem; align-items:center;">
-          <div class="num" style="font-size:1.5rem; color:var(--coral);">01</div>
-          <h3 style="font-size:1.4rem;">Onderzoek &amp; Strategie</h3>
-          <p style="color:var(--text-on-paper-70); font-size:var(--fs-small); max-width:48ch;">We duiken in je markt, doelgroep en cijfers voordat er ook maar iets ontworpen wordt.</p>
+      <div class="process" data-stagger>
+        <div class="process__step">
+          <div class="process__node process__node--up">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.2" y2="16.2"/></svg>
+            <span class="process__badge">01</span>
+          </div>
+          <h3>Onderzoek &amp; Strategie</h3>
+          <p>We duiken in je markt, doelgroep en cijfers voordat er ook maar iets ontworpen wordt.</p>
         </div>
-        <div class="hairline-top" style="display:grid; grid-template-columns:80px 1fr 1fr; gap:2rem; padding-block:2.2rem; align-items:center;">
-          <div class="num" style="font-size:1.5rem; color:var(--coral);">02</div>
-          <h3 style="font-size:1.4rem;">Concept &amp; Creatie</h3>
-          <p style="color:var(--text-on-paper-70); font-size:var(--fs-small); max-width:48ch;">Vanuit die strategie bouwen we een concept met lef — visueel, verbaal, memorabel.</p>
+        <svg class="process__arrow" viewBox="0 0 48 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="1 6" stroke-linecap="round"><path d="M2 16C14 16 14 4 24 4S34 16 46 16"/></svg>
+        <div class="process__step">
+          <div class="process__node process__node--down">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="m4.9 4.9 2.8 2.8"/><path d="m16.3 16.3 2.8 2.8"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="m4.9 19.1 2.8-2.8"/><path d="m16.3 7.7 2.8-2.8"/></svg>
+            <span class="process__badge">02</span>
+          </div>
+          <h3>Concept &amp; Creatie</h3>
+          <p>Vanuit die strategie bouwen we een concept met lef, visueel, verbaal, memorabel.</p>
         </div>
-        <div class="hairline-top" style="display:grid; grid-template-columns:80px 1fr 1fr; gap:2rem; padding-block:2.2rem; align-items:center;">
-          <div class="num" style="font-size:1.5rem; color:var(--coral);">03</div>
-          <h3 style="font-size:1.4rem;">Bouw &amp; Executie</h3>
-          <p style="color:var(--text-on-paper-70); font-size:var(--fs-small); max-width:48ch;">Design wordt werkend product: site, campagne of contentlijn — snel en scherp opgeleverd.</p>
+        <svg class="process__arrow" viewBox="0 0 48 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="1 6" stroke-linecap="round"><path d="M2 4C14 4 14 16 24 16S34 4 46 4"/></svg>
+        <div class="process__step">
+          <div class="process__node process__node--up">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.77Z"/></svg>
+            <span class="process__badge">03</span>
+          </div>
+          <h3>Bouw &amp; Executie</h3>
+          <p>Design wordt werkend product: site, campagne of contentlijn, snel en scherp opgeleverd.</p>
         </div>
-        <div class="hairline-top divider" style="display:grid; grid-template-columns:80px 1fr 1fr; gap:2rem; padding-block:2.2rem; align-items:center; border-bottom:1px solid var(--paper-line);">
-          <div class="num" style="font-size:1.5rem; color:var(--coral);">04</div>
-          <h3 style="font-size:1.4rem;">Groei &amp; Optimalisatie</h3>
-          <p style="color:var(--text-on-paper-70); font-size:var(--fs-small); max-width:48ch;">We meten, leren en bikkelen door. Groei stopt niet bij de lancering.</p>
+        <svg class="process__arrow" viewBox="0 0 48 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="1 6" stroke-linecap="round"><path d="M2 16C14 16 14 4 24 4S34 16 46 16"/></svg>
+        <div class="process__step">
+          <div class="process__node process__node--down">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 6"/><polyline points="15 6 21 6 21 12"/></svg>
+            <span class="process__badge">04</span>
+          </div>
+          <h3>Groei &amp; Optimalisatie</h3>
+          <p>We meten, leren en bikkelen door. Groei stopt niet bij de lancering.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- REVIEWS -->
-  <section class="section bg-paper-dim">
-    <div class="wrap">
+  <section class="section bg-ink" style="position:relative; overflow:hidden;">
+    <div class="blob-field" aria-hidden="true"><div class="blob" style="width:30vw;height:30vw;background:var(--violet);top:-10%;left:-8%;"></div></div>
+    <div class="wrap" style="position:relative;">
       <p class="eyebrow" data-reveal>Wat klanten zeggen</p>
-      <h2 style="font-size:var(--fs-h2); max-width:14ch; margin-bottom:clamp(2.5rem,5vw,4rem);" data-split>Niet onze woorden. De hunne.</h2>
+      <h2 style="font-size:var(--fs-h2); max-width:14ch; margin-bottom:clamp(2.5rem,5vw,4rem); color:var(--paper);" data-split>Niet onze woorden. De hunne.</h2>
 
       <div class="grid-3" data-stagger>
-        <div class="card">
-          <svg width="28" height="20" viewBox="0 0 28 20" fill="var(--coral)"><path d="M0 20V10.6C0 3.9 4.4 0 11 0v5.2c-3 .5-4.8 2.2-5.2 5.2H9v9.6H0Zm17 0V10.6C17 3.9 21.4 0 28 0v5.2c-3 .5-4.8 2.2-5.2 5.2H26v9.6h-9Z"/></svg>
-          <p style="margin-top:1.2rem; font-size:1.05rem;">"Boost Lab snapte onze markt sneller dan bureaus die we al jaren kennen. Binnen twee maanden zag je het verschil."</p>
-          <div style="margin-top:1.4rem;"><div class="num">Opdrachtgever — Brandingtraject</div></div>
+        <div class="card review-card">
+          <div class="review-card__stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-card__quote">"Boost Lab snapte onze markt sneller dan bureaus die we al jaren kennen. Binnen twee maanden zag je het verschil."</p>
+          <div class="review-card__who"><div class="review-card__mark">O</div><div class="num">Opdrachtgever — Brandingtraject</div></div>
         </div>
-        <div class="card">
-          <svg width="28" height="20" viewBox="0 0 28 20" fill="var(--coral)"><path d="M0 20V10.6C0 3.9 4.4 0 11 0v5.2c-3 .5-4.8 2.2-5.2 5.2H9v9.6H0Zm17 0V10.6C17 3.9 21.4 0 28 0v5.2c-3 .5-4.8 2.2-5.2 5.2H26v9.6h-9Z"/></svg>
-          <p style="margin-top:1.2rem; font-size:1.05rem;">"Eindelijk een bureau dat niet alleen mooie moodboards stuurt, maar meedenkt over structuur en conversie."</p>
-          <div style="margin-top:1.4rem;"><div class="num">Opdrachtgever — Webdesign</div></div>
+        <div class="card review-card">
+          <div class="review-card__stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-card__quote">"Eindelijk een bureau dat niet alleen mooie moodboards stuurt, maar meedenkt over structuur en conversie."</p>
+          <div class="review-card__who"><div class="review-card__mark">O</div><div class="num">Opdrachtgever — Webdesign</div></div>
         </div>
-        <div class="card">
-          <svg width="28" height="20" viewBox="0 0 28 20" fill="var(--coral)"><path d="M0 20V10.6C0 3.9 4.4 0 11 0v5.2c-3 .5-4.8 2.2-5.2 5.2H9v9.6H0Zm17 0V10.6C17 3.9 21.4 0 28 0v5.2c-3 .5-4.8 2.2-5.2 5.2H26v9.6h-9Z"/></svg>
-          <p style="margin-top:1.2rem; font-size:1.05rem;">"Van briefing tot lancering zonder dat het kwaliteit kostte. Dat had ik niet verwacht."</p>
-          <div style="margin-top:1.4rem;"><div class="num">Opdrachtgever — Merkontwikkeling</div></div>
+        <div class="card review-card">
+          <div class="review-card__stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-card__quote">"Van briefing tot lancering zonder dat het kwaliteit kostte. Dat had ik niet verwacht."</p>
+          <div class="review-card__who"><div class="review-card__mark">O</div><div class="num">Opdrachtgever — Merkontwikkeling</div></div>
         </div>
       </div>
-      <p style="margin-top:1.4rem; font-size:var(--fs-tiny); color:var(--text-on-paper-45);" data-reveal>* Voorbeeldcitaten — vervang door quotes van je eigen klanten.</p>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- WAAR GAAT JOUW AANDACHT NAARTOE -->
   <section class="section" style="text-align:center;">
     <div class="wrap">
-      <p class="eyebrow" style="justify-content:center;" data-reveal>Klaar voor de volgende stap?</p>
-      <h2 style="font-size:var(--fs-h1); max-width:18ch; margin-inline:auto;" data-split>Laten we van jouw merk iets bouwen dat niet te negeren is.</h2>
-      <div style="margin-top:2.4rem; display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;" data-reveal>
-        <a href="contact.html" class="btn btn--lime magnetic" data-cursor="Boeken">
-          <span>Plan een kennismaking</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+      <p class="eyebrow" style="justify-content:center;" data-reveal>Volgende stap</p>
+      <h2 style="font-size:var(--fs-h1); max-width:18ch; margin-inline:auto; margin-bottom:clamp(2.5rem,5vw,4rem);" data-split>Waar gaat jouw aandacht naartoe?</h2>
+
+      <div class="grid-3" style="text-align:left;" data-stagger>
+        <a href="over-ons.html" class="card attention-card magnetic" data-cursor="Ontdek">
+          <div class="attention-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="8" r="2.6"/><path d="M16 14.2c2.7.5 4.5 2.5 4.5 5.8"/></svg></div>
+          <h3 style="font-size:1.25rem;">Over ons</h3>
+          <p style="margin-top:.6rem; color:var(--text-on-paper-70); font-size:var(--fs-small);">Wie er achter Boost Lab zit en hoe we werken.</p>
+          <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </a>
-        <a href="contact.html#offerte" class="btn btn--ghost magnetic" data-cursor="Aanvragen"><span>Vraag een offerte aan</span></a>
+        <a href="diensten.html" class="card attention-card magnetic" data-cursor="Ontdek">
+          <div class="attention-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+          <h3 style="font-size:1.25rem;">Diensten</h3>
+          <p style="margin-top:.6rem; color:var(--text-on-paper-70); font-size:var(--fs-small);">Ontdek wat we voor jouw merk kunnen betekenen.</p>
+          <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+        <a href="cases.html" class="card attention-card magnetic" data-cursor="Ontdek">
+          <div class="attention-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div>
+          <h3 style="font-size:1.25rem;">Portfolio</h3>
+          <p style="margin-top:.6rem; color:var(--text-on-paper-70); font-size:var(--fs-small);">Bekijk de projecten die we al bouwden.</p>
+          <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -332,16 +462,16 @@
         <li><a href="over-ons.html">Over ons</a></li>
         <li><a href="diensten.html">Diensten</a></li>
         <li><a href="cases.html">Cases</a></li>
-        <li><a href="insights.html">Insights</a></li>
+        <li><a href="prijzen.html">Prijzen</a></li><li><a href="boost-check.html">Boost Check</a></li>
       </ul>
     </div>
     <div class="footer__col">
       <h4>Diensten</h4>
       <ul>
-        <li><a href="diensten.html#branding">Branding</a></li>
-        <li><a href="diensten.html#websites">Websites</a></li>
-        <li><a href="diensten.html#identiteit">Identiteit</a></li>
-        <li><a href="diensten.html#grafisch">Grafisch</a></li>
+        <li><a href="diensten/branding.html">Branding</a></li>
+        <li><a href="diensten/websites.html">Websites</a></li>
+        <li><a href="diensten/identiteit.html">Identiteit</a></li>
+        <li><a href="diensten/grafisch.html">Grafisch</a></li>
       </ul>
     </div>
     <div class="footer__col">
@@ -361,5 +491,9 @@
 </footer>
 
 <script src="assets/js/core.js"></script>
+<a class="whatsapp-fab" href="https://wa.me/31642822966?text=Hoi%20BoostLab%2C%20ik%20ben%20benieuwd%20wat%20jullie%20voor%20mijn%20bedrijf%20kunnen%20betekenen." target="_blank" rel="noopener" aria-label="Stel je vraag via WhatsApp" data-tooltip="Stel je vraag via WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.1c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.16-4.94-4.35-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.28.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.83 2 .9 2.14.07.14.11.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.61-.07.16-.19.7-.82.89-1.1.19-.28.37-.23.62-.14.26.09 1.63.77 1.91.91.28.14.46.21.53.33.07.12.07.68-.17 1.35Z"/></svg>
+</a>
+
 </body>
 </html>
