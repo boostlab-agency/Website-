@@ -1,0 +1,6 @@
+{
+  "name": "boostlab-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Statische website van Boost Lab Agency. De /api-map bevat Vercel serverless functions (Node.js, geen dependencies) voor e-mailverzending via Resend."
+}
