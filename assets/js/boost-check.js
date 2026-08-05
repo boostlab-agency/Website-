@@ -1,23 +1,13 @@
 /* Boost Check — interactive quiz engine, scoring, on-page analysis and the
    automatic Boost Analyse e-mail.
 
-   E-mail verzending gebeurt via EmailJS (emailjs.com), omdat deze site geen
-   eigen backend heeft en dus geen e-mail kan versturen "van de server af".
-   EmailJS stuurt de mail rechtstreeks vanuit de browser van de bezoeker via
-   een gekoppelde mailbox. Vul de 3 ID's hieronder in na het aanmaken van een
-   (gratis) EmailJS-account en een template gebaseerd op
-   assets/email/boost-analyse-template.html. Zolang deze op "YOUR_..." staan,
-   valt het formulier automatisch terug op de mailto-aanvraag naar Jip. */
+   Versturen gaat via /api/boost-check.js (Vercel serverless function, zie
+   die map), die met Resend twee mails stuurt: een interne notificatie naar
+   CONTACT_EMAIL en de uitgebreide HTML Boost Analyse naar de bezoeker zelf.
+   Lukt dat om wat voor reden dan ook niet, dan valt het formulier terug op
+   een mailto-concept naar Jip zodat de lead nooit verloren gaat. */
 (function(){
   'use strict';
-
-  var EMAILJS_PUBLIC_KEY = 'YOUR_EMAILJS_PUBLIC_KEY';
-  var EMAILJS_SERVICE_ID = 'YOUR_EMAILJS_SERVICE_ID';
-  var EMAILJS_TEMPLATE_ID = 'YOUR_EMAILJS_TEMPLATE_ID';
-  var emailjsReady = false;
-  if(window.emailjs && EMAILJS_PUBLIC_KEY.indexOf('YOUR_') !== 0){
-    try{ window.emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); emailjsReady = true; }catch(err){ emailjsReady = false; }
-  }
 
   /* Smooth scroll for the hero CTA */
   document.querySelectorAll('[data-scroll-to]').forEach(function(el){
@@ -196,25 +186,11 @@
     }).filter(Boolean).join('\n');
   }
 
-  function buildMailtoFallback(fields){
-    var lines = [
-      'Naam: ' + fields.to_name,
-      'Bedrijfsnaam: ' + fields.bedrijfsnaam,
-      'E-mail: ' + fields.to_email,
-      'Telefoonnummer: ' + fields.telefoonnummer,
-      'Website: ' + fields.website,
-      'Boost Score: ' + fields.score + ' — ' + fields.band_title,
-      '',
-      'Gegeven antwoorden:',
-      fields.antwoorden_overzicht
-    ];
-    var subject = encodeURIComponent('Boost Check aanvraag — ' + fields.bedrijfsnaam);
-    var body = encodeURIComponent(lines.join('\n'));
-    window.location.href = 'mailto:jip@boostlab-agency.nl?subject=' + subject + '&body=' + body;
-  }
-
-  /* Lead form: validate, then send the automatic Boost Analyse e-mail via
-     EmailJS (if configured); falls back to a mailto-draft to Jip otherwise. */
+  /* Lead form: validate, then send via /api/boost-check.js (Resend).
+     LET OP: de mailto-fallback is tijdelijk verwijderd (op verzoek) zodat
+     fouten in de Resend-koppeling zichtbaar blijven in plaats van stil
+     opgevangen te worden. Voeg 'm pas terug als /api/boost-check bevestigd
+     werkt. */
   var leadForm = document.getElementById('boostLeadForm');
   if(leadForm){
     leadForm.addEventListener('submit', function(e){
@@ -231,40 +207,43 @@
 
       var submitBtn = leadForm.querySelector('button[type="submit"]');
       if(submitBtn) submitBtn.disabled = true;
+      if(status){ status.textContent = 'Bezig met versturen...'; status.className = 'form-status'; }
 
-      var fields = {
-        to_name: document.getElementById('bcNaam').value.trim(),
-        to_email: document.getElementById('bcEmail').value.trim(),
-        bedrijfsnaam: document.getElementById('bcBedrijf').value.trim(),
-        telefoonnummer: document.getElementById('bcTelefoon').value.trim() || '-',
-        website: document.getElementById('bcWebsite').value.trim() || '-',
-        score: String(lastScore),
-        band_title: lastBand.title,
-        band_intro: lastBand.intro,
-        sterke_punten: lastBand.strengths.join('\n'),
-        verbeterpunten: lastBand.improvements.join('\n'),
-        aanbevelingen: lastBand.advice.join('\n'),
-        waarom_belangrijk: lastBand.why,
-        hoe_boostlab_helpt: lastBand.how,
-        antwoorden_overzicht: answersSummaryText(),
-        contact_url: 'https://boostlab-agency.nl/contact.html#plannen'
+      var name = document.getElementById('bcNaam').value.trim();
+      var email = document.getElementById('bcEmail').value.trim();
+      var company = document.getElementById('bcBedrijf').value.trim();
+      var phone = document.getElementById('bcTelefoon').value.trim();
+      var website = document.getElementById('bcWebsite').value.trim();
+
+      var payload = {
+        name: name,
+        email: email,
+        company: company,
+        phone: phone,
+        website: website,
+        score: lastScore,
+        answers: answerDetails.filter(Boolean)
       };
 
-      if(emailjsReady){
-        window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, fields).then(function(){
-          if(status){ status.textContent = 'Gelukt! Check je inbox, je uitgebreide Boost Analyse is onderweg.'; status.className = 'form-status is-success'; }
-          leadForm.reset();
-          if(submitBtn) submitBtn.disabled = false;
-        }).catch(function(){
-          if(status){ status.textContent = 'Automatisch versturen lukte niet, je e-mailprogramma opent nu als alternatief.'; status.className = 'form-status is-error'; }
-          buildMailtoFallback(fields);
-          if(submitBtn) submitBtn.disabled = false;
+      fetch('/api/boost-check', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function(res){
+        return res.json().catch(function(){ return {}; }).then(function(data){
+          if(!res.ok) throw new Error(data.error || ('Serverfout (HTTP ' + res.status + ')'));
+          return data;
         });
-      } else {
-        if(status){ status.textContent = 'Je e-mailprogramma opent zo met je Boost Analyse-aanvraag klaar om te versturen.'; status.className = 'form-status is-success'; }
-        buildMailtoFallback(fields);
+      }).then(function(){
+        if(status){ status.textContent = 'Gelukt! Check je inbox, je uitgebreide Boost Analyse is onderweg.'; status.className = 'form-status is-success'; }
+        leadForm.reset();
+      }).catch(function(err){
+        console.error('Boost Check: versturen via /api/boost-check mislukt —', err);
+        var detail = (err && err.message) ? err.message : 'onbekende fout';
+        if(status){ status.textContent = 'Versturen mislukt (' + detail + '). Probeer het later opnieuw of mail ons via jip@boostlab-agency.nl.'; status.className = 'form-status is-error'; }
+      }).finally(function(){
         if(submitBtn) submitBtn.disabled = false;
-      }
+      });
     });
   }
 })();
