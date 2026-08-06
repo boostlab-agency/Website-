@@ -6,7 +6,7 @@
   'use strict';
 
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var order = ['branding', 'websites', 'identiteit', 'grafisch'];
+  var order = ['branding', 'websites', 'platformen', 'ai-automatisering', 'identiteit', 'grafisch'];
   var sections = order.map(function(id){ return document.getElementById(id); }).filter(Boolean);
   var railItems = document.querySelectorAll('.story-rail__item');
   var fill = document.getElementById('storyFill');

@@ -46,17 +46,30 @@
     document.body.append(dot, ring, label);
     document.body.classList.add('cursor-ready');
 
-    var mx=0,my=0, rx=0,ry=0;
+    dot.style.willChange = ring.style.willChange = label.style.willChange = 'transform';
+
+    var mx=0,my=0, rx=0,ry=0, lastT=null;
     window.addEventListener('mousemove', function(e){
       mx = e.clientX; my = e.clientY;
+    }, {passive:true});
+
+    function loop(t){
+      if(lastT === null) lastT = t;
+      var dt = Math.min(t - lastT, 48); /* clamp so a stall doesn't cause a jump */
+      lastT = t;
+
+      /* Dot and label track the pointer 1:1 for a direct, premium feel */
       dot.style.transform = 'translate3d('+mx+'px,'+my+'px,0) translate(-50%,-50%)';
       label.style.transform = 'translate3d('+(mx+26)+'px,'+(my+26)+'px,0) translate(-50%,-50%)';
-    });
-    (function loop(){
-      rx += (mx-rx)*.16; ry += (my-ry)*.16;
+
+      /* Ring trails with a frame-rate independent ease, snappier than before */
+      var ease = 1 - Math.pow(1 - .3, dt / 16.67);
+      rx += (mx-rx)*ease; ry += (my-ry)*ease;
       ring.style.transform = 'translate3d('+rx+'px,'+ry+'px,0) translate(-50%,-50%)';
+
       requestAnimationFrame(loop);
-    })();
+    }
+    requestAnimationFrame(loop);
 
     document.querySelectorAll('a, button, .magnetic, [data-cursor]').forEach(function(el){
       el.addEventListener('mouseenter', function(){

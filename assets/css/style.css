@@ -264,6 +264,7 @@ h1,h2,h3,h4{ font-family: var(--font-display); font-weight:700; line-height:1.02
   box-shadow: 0 0 0 4px rgba(255,90,60,.16), 0 0 16px 2px rgba(255,90,60,.55);
   pointer-events:none;
   transform: translate3d(-50%,-50%,0);
+  will-change: transform;
   transition: width var(--dur-fast) var(--ease-out), height var(--dur-fast) var(--ease-out), background var(--dur-fast), box-shadow var(--dur-fast);
 }
 .cursor-ring{
@@ -273,11 +274,13 @@ h1,h2,h3,h4{ font-family: var(--font-display); font-weight:700; line-height:1.02
   background: rgba(204,255,102,.07);
   pointer-events:none;
   transform: translate3d(-50%,-50%,0);
+  will-change: transform;
   transition: width var(--dur-fast) var(--ease-out), height var(--dur-fast) var(--ease-out), opacity var(--dur-fast), border-color var(--dur-fast), background var(--dur-fast);
 }
 .cursor-label{
   position:fixed; top:0; left:0; z-index:9999;
   transform: translate3d(-50%,-50%,0);
+  will-change: transform;
   font-family: var(--font-mono);
   font-size:.7rem; letter-spacing:.08em; text-transform:uppercase;
   background: var(--ink); color: var(--lime);
@@ -879,6 +882,61 @@ body.menu-open{ overflow:hidden; }
 }
 
 /* ==========================================================================
+   ROADMAP — premium alternating vertical timeline ("Onze aanpak" per dienst)
+   ========================================================================== */
+.roadmap{ position:relative; margin-top: clamp(3rem,6vw,5rem); display:flex; flex-direction:column; gap: clamp(2.2rem,4.5vw,3.2rem); }
+.roadmap::before{
+  content:''; position:absolute; top:4px; bottom:4px; left:27px; width:2px;
+  background: linear-gradient(180deg, var(--lime) 0%, var(--coral) 55%, var(--violet) 100%); opacity:.4;
+}
+.roadmap__item{ position:relative; padding-left:76px; }
+.roadmap__node{
+  position:absolute; left:0; top:0; z-index:1;
+  width:56px; height:56px; border-radius:50%;
+  background: var(--ink); border:2px solid var(--lime);
+  display:grid; place-items:center; font-family:var(--font-mono); font-size:.85rem; color:var(--lime);
+  transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out), border-color var(--dur-fast);
+}
+.roadmap__item:hover .roadmap__node{ transform: scale(1.08); box-shadow: 0 0 0 7px rgba(204,255,102,.14); border-color: var(--coral); }
+.roadmap__card{
+  background: var(--ink-soft); border:1px solid var(--ink-line); border-radius: var(--radius-md);
+  padding: clamp(1.5rem,2.4vw,2.2rem);
+  transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out), border-color var(--dur-fast);
+}
+.roadmap__item:hover .roadmap__card{ transform: translateY(-4px); border-color: transparent; box-shadow: 0 24px 48px -24px rgba(0,0,0,.5), 0 30px 70px -30px rgba(204,255,102,.3); }
+.roadmap__phase{ font-family:var(--font-mono); font-size:var(--fs-tiny); text-transform:uppercase; letter-spacing:.08em; color: var(--coral); }
+.roadmap__card h3{ font-size:1.25rem; color: var(--paper); margin-top:.4rem; }
+.roadmap__fields{ margin-top:1.1rem; display:flex; flex-direction:column; gap:.7rem; }
+.roadmap__fields div span{ font-family:var(--font-mono); font-size:var(--fs-tiny); text-transform:uppercase; letter-spacing:.06em; color: var(--lime); }
+.roadmap__fields div p{ margin-top:.25rem; color: var(--text-on-ink-70); font-size:var(--fs-small); }
+@media (min-width:901px){
+  .roadmap::before{ left:50%; margin-left:-1px; }
+  .roadmap__item{ padding-left:0; display:grid; grid-template-columns:1fr 76px 1fr; column-gap:2.4rem; align-items:start; }
+  .roadmap__node{ position:relative; left:auto; top:auto; grid-column:2; justify-self:center; }
+  .roadmap__card{ grid-column:1; }
+  .roadmap__item:nth-child(even) .roadmap__card{ grid-column:3; }
+}
+
+/* ==========================================================================
+   SERVICE VISUAL — abstract gradient panel for services without dedicated
+   photography (Platformen, AI & Automatisering)
+   ========================================================================== */
+.service-visual{
+  position:relative; overflow:hidden; border-radius: var(--radius-lg);
+  background: var(--gradient-dark);
+  display:grid; place-items:center;
+}
+.service-visual::after{
+  content:''; position:absolute; inset:0; pointer-events:none;
+  background-image: radial-gradient(rgba(246,243,236,.16) 1px, transparent 1px);
+  background-size: 22px 22px; opacity:.5; mix-blend-mode:overlay;
+}
+.service-visual svg{
+  position:relative; z-index:1; width:clamp(84px,13vw,132px); height:clamp(84px,13vw,132px);
+  color: var(--lime); opacity:.9;
+}
+
+/* ==========================================================================
    REVIEWS — featured quote treatment
    ========================================================================== */
 .review-card{
@@ -1130,6 +1188,46 @@ body.menu-open{ overflow:hidden; }
 }
 .chip--filled{ background: var(--ink); color: var(--paper); border-color:transparent; }
 .chip--lime{ background: var(--lime); color: var(--ink); border-color:transparent; }
+
+/* ==========================================================================
+   SERVICES GRID (homepage "Wat we doen" — connected, hairline card grid)
+   ========================================================================== */
+.services-grid{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+  background: var(--paper-line); border:1px solid var(--paper-line);
+  border-radius: var(--radius-md); overflow:hidden;
+}
+.bg-ink .services-grid{ background: var(--ink-line); border-color: var(--ink-line); }
+.service-tile{
+  position:relative; background: var(--paper); padding: clamp(1.8rem,2.6vw,2.4rem);
+  display:flex; flex-direction:column; min-height:15.5rem;
+  transition: background var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+}
+.bg-ink .service-tile{ background: var(--ink); }
+.service-tile::before{
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background: var(--gradient-primary); transform: scaleX(0); transform-origin:left;
+  transition: transform var(--dur-med) var(--ease-out);
+}
+.service-tile:hover{ background: var(--paper-dim); transform: translateY(-4px); z-index:1; }
+.bg-ink .service-tile:hover{ background: var(--ink-soft); }
+.service-tile:hover::before{ transform: scaleX(1); }
+.service-tile svg{ margin-block:1.1rem; color: var(--ink); transition: color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out); }
+.bg-ink .service-tile svg{ color: var(--paper); }
+.service-tile:hover svg{ color: var(--coral); transform: translateY(-2px); }
+.service-tile h3{ font-size:1.2rem; }
+.service-tile p{ margin-top:.5rem; color: var(--text-on-paper-70); font-size:var(--fs-small); }
+.service-tile__detail{
+  margin-top:0; padding-top:0; border-top:1px dashed transparent;
+  font-family:var(--font-mono); font-size:var(--fs-tiny); color: var(--text-on-paper-45); letter-spacing:.02em;
+  max-height:0; opacity:0; overflow:hidden;
+  transition: max-height var(--dur-fast) var(--ease-out), opacity var(--dur-fast) var(--ease-out), margin-top var(--dur-fast), padding-top var(--dur-fast), border-color var(--dur-fast);
+}
+.service-tile:hover .service-tile__detail{ margin-top:.9rem; padding-top:.9rem; border-top-color: var(--paper-line); max-height:6rem; opacity:1; }
+.service-tile .arrow{ margin-top:auto; align-self:flex-end; padding-top:1rem; opacity:0; transform:translate(-6px,6px); transition: opacity var(--dur-fast), transform var(--dur-fast) var(--ease-out); }
+.service-tile:hover .arrow{ opacity:1; transform:translate(0,0); }
+@media (max-width:900px){ .services-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:600px){ .services-grid{ grid-template-columns:1fr; } }
 
 /* ==========================================================================
    FOOTER
