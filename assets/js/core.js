@@ -5,19 +5,29 @@
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var isFinePointer = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
 
-  /* ---------- Loader ---------- */
-  window.addEventListener('load', function(){
+  /* ---------- Loader ----------
+     The intro only plays on the first page view of a session, and starts as
+     soon as the DOM is ready (this script runs at the end of <body>) instead
+     of waiting for every image/font via `load`. Repeat views skip it; the
+     inline head script adds .no-intro so it never flashes. */
+  (function(){
     var loader = document.querySelector('.loader');
     if(!loader) return;
-    var minTime = 900;
-    var start = Date.now();
-    var elapsed = Date.now() - start;
+    var seen = false;
+    try { seen = sessionStorage.getItem('bl-intro') === '1'; sessionStorage.setItem('bl-intro', '1'); } catch(e){}
+    if(seen || reducedMotion){
+      loader.remove();
+      document.body.classList.add('is-loaded');
+      return;
+    }
+    var minTime = 1100; // lets the logo animation finish
+    var elapsed = window.performance ? performance.now() : 0;
     setTimeout(function(){
       loader.classList.add('is-done');
       document.body.classList.add('is-loaded');
       setTimeout(function(){ loader.remove(); }, 1200);
     }, Math.max(0, minTime - elapsed));
-  });
+  })();
 
   /* ---------- Page transition on internal navigation ---------- */
   var transitionEl = document.querySelector('.page-transition');
@@ -31,9 +41,24 @@
       if(link.hasAttribute('data-no-transition')) return;
       e.preventDefault();
       transitionEl.classList.add('is-active');
-      setTimeout(function(){ window.location.href = href; }, 560);
+      setTimeout(function(){ window.location.href = href; }, 380);
     });
   }
+
+  /* ---------- Prefetch internal pages on hover/touch ---------- */
+  var prefetched = {};
+  function prefetch(e){
+    var link = e.target.closest && e.target.closest('a[href^="/"]');
+    if(!link) return;
+    var href = link.getAttribute('href').split('#')[0];
+    if(!href || prefetched[href] || href === location.pathname) return;
+    prefetched[href] = true;
+    var l = document.createElement('link');
+    l.rel = 'prefetch'; l.href = href;
+    document.head.appendChild(l);
+  }
+  document.addEventListener('mouseover', prefetch, {passive:true});
+  document.addEventListener('touchstart', prefetch, {passive:true});
 
   /* ---------- Restore clean state when a page is served from bfcache ----------
      A browser back/forward navigation often restores the page from the

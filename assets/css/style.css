@@ -3,7 +3,6 @@
    Concept: "The Growth Formula" — lab precision × kinetic energy × human warmth.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Space+Mono:wght@400;700&display=swap');
 
 :root{
   /* --- Brand palette --- */
@@ -318,6 +317,7 @@ body.cursor-label-active .cursor-label{ opacity:1; }
   transition: transform var(--dur-slow) var(--ease-in-out);
 }
 .loader.is-done{ transform: translateY(-100%); }
+.no-intro .loader{ display:none; }
 .loader__logo-wrap{ position:relative; display:grid; place-items:center; isolation:isolate; }
 .loader__logo-wrap::before{
   content:'';
@@ -369,7 +369,7 @@ body.cursor-label-active .cursor-label{ opacity:1; }
   transform: translateY(101%);
   pointer-events:none;
 }
-.page-transition.is-active{ transition: transform .6s var(--ease-in-out); transform: translateY(0); }
+.page-transition.is-active{ transition: transform .4s var(--ease-in-out); transform: translateY(0); }
 .page-transition.is-leaving{ transition: transform .6s var(--ease-in-out) .05s; transform: translateY(-101%); }
 
 /* ==========================================================================
