@@ -161,7 +161,7 @@ module.exports = async (req, res) => {
     }
 
     const band = getBand(score);
-    const contactUrl = 'https://boostlab-agency.nl/contact.html#plannen';
+    const contactUrl = 'https://boostlab-agency.nl/contact/#plannen';
 
     await sendEmail({
       to: contactEmail,

@@ -20,7 +20,9 @@
       "Bash(timeout 20 find \"/c/Users/JipSanders/OneDrive - Boost lab agency/Boostlab - Documenten/BOOSTLAB/boostlab website/Boostlab agency\" -maxdepth 2 -newer \"assets/img/logo-lime.png\" -type f)",
       "Bash(timeout 20 find \"/c/Users/JIPSAN~1/AppData/Local/Temp/claude\" -newermt \"2026-08-04 14:00\" -type f 2>/dev/null | grep -v \"\\\\.git\")",
       "Read(//c/Users/JIPSAN~1/AppData/Local/Temp/claude/**)",
-      "Bash(grep -n \"^\\\\.nav\\\\|^   NAV$\" assets/css/style.css)"
+      "Bash(grep -n \"^\\\\.nav\\\\|^   NAV$\" assets/css/style.css)",
+      "Bash(sed -i 's|https://boostlab-agency.nl/prijzen\\\\.html|https://boostlab-agency.nl/prijzen/|g' prijzen.html)",
+      "Bash(sed -i 's|https://boostlab-agency.nl/boost-check\\\\.html|https://boostlab-agency.nl/boost-check/|g' boost-check.html)"
     ]
   }
 }

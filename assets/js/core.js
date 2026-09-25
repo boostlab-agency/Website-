@@ -35,6 +35,20 @@
     });
   }
 
+  /* ---------- Restore clean state when a page is served from bfcache ----------
+     A browser back/forward navigation often restores the page from the
+     back/forward cache via `pageshow` (persisted:true) instead of firing a
+     fresh `load`. Without this, a page left mid-transition (is-active still
+     set on .page-transition, or the loader mid-removal) stays frozen in that
+     state forever when the user navigates back to it. */
+  window.addEventListener('pageshow', function(e){
+    if(!e.persisted) return;
+    var loader = document.querySelector('.loader');
+    if(loader) loader.remove();
+    document.body.classList.add('is-loaded');
+    if(transitionEl) transitionEl.classList.remove('is-active', 'is-leaving');
+  });
+
   /* ---------- Custom cursor ---------- */
   if(isFinePointer && !reducedMotion){
     var dot = document.createElement('div');
@@ -109,12 +123,17 @@
     onScroll();
     window.addEventListener('scroll', onScroll, {passive:true});
 
-    var path = location.pathname.split('/').pop() || 'index.html';
+    /* Clean URLs always resolve to a trailing-slash path, so comparison
+       happens on normalized root-relative paths rather than raw filenames.
+       Links carrying a #hash are skipped (they're CTAs, not the section's
+       own nav item, so they shouldn't visually claim "active"). */
+    var currentPath = location.pathname;
+    if(currentPath !== '/' && currentPath.charAt(currentPath.length - 1) !== '/') currentPath += '/';
     document.querySelectorAll('.mega-menu__links a').forEach(function(a){
       var href = a.getAttribute('href');
-      if(href === path || (path === '' && href === 'index.html')){
-        a.classList.add('is-active');
-      }
+      if(!href || href.charAt(0) !== '/' || href.indexOf('#') !== -1) return;
+      if(href.charAt(href.length - 1) !== '/') href += '/';
+      if(href === currentPath) a.classList.add('is-active');
     });
   }
 

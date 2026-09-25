@@ -119,8 +119,8 @@ module.exports = async (req, res) => {
         subject: 'Bedankt voor je bericht | BoostLab',
         html: buildConfirmationEmail({
           name,
-          casesUrl: 'https://boostlab-agency.nl/cases.html',
-          plannenUrl: 'https://boostlab-agency.nl/contact.html#plannen'
+          casesUrl: 'https://boostlab-agency.nl/cases/',
+          plannenUrl: 'https://boostlab-agency.nl/contact/#plannen'
         })
       });
     } catch (confirmErr) {
