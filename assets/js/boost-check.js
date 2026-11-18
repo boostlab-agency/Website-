@@ -235,6 +235,7 @@
           return data;
         });
       }).then(function(){
+        if(window.blTrack) window.blTrack('lead_boost_check', { score: lastScore });
         if(status){ status.textContent = 'Gelukt! Check je inbox, je uitgebreide Boost Analyse is onderweg.'; status.className = 'form-status is-success'; }
         leadForm.reset();
       }).catch(function(err){

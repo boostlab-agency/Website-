@@ -61,6 +61,7 @@
           return data;
         });
       }).then(function(){
+        if(window.blTrack) window.blTrack('lead_contact');
         if(status){ status.textContent = 'Verstuurd! We nemen binnen één werkdag contact op.'; status.className = 'form-status is-success'; }
         form.reset();
       }).catch(function(err){
