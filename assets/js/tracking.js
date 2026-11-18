@@ -95,7 +95,7 @@
     bar.setAttribute('role', 'dialog');
     bar.setAttribute('aria-label', 'Cookievoorkeuren');
     bar.innerHTML =
-      '<p>Ik gebruik cookies om te meten hoe de site gebruikt wordt en om advertenties te verbeteren. Akkoord?</p>' +
+      '<p>We gebruiken cookies om te meten hoe de site gebruikt wordt en om advertenties te verbeteren. Akkoord?</p>' +
       '<div class="consent-bar__actions">' +
       '<button type="button" class="consent-bar__btn consent-bar__btn--ghost" data-consent="denied">Alleen noodzakelijk</button>' +
       '<button type="button" class="consent-bar__btn" data-consent="granted">Akkoord</button>' +
