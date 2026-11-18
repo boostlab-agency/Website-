@@ -15,7 +15,7 @@
 (function () {
   'use strict';
 
-  var GA4_ID = '';
+  var GA4_ID = 'G-WBGYY2EJ77';
   var ADS_ID = '';
   var ADS_LABELS = {
     lead_contact: '',
