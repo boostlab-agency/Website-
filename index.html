@@ -36,7 +36,6 @@
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Tilburg",
-    "postalCode": "5038 NM",
     "addressCountry": "NL"
   },
   "areaServed": ["Tilburg", "Noord-Brabant", "NL"],
@@ -132,10 +131,10 @@
     </div>
 
     <div class="wrap" style="position:relative;">
-      <p class="eyebrow" data-reveal>Boost Lab Agency — Groei laboratorium</p>
+      <p class="eyebrow" data-reveal>Webdesign en branding uit Tilburg</p>
       <h1 class="fs-hero" style="font-size:var(--fs-hero); max-width:15ch;" data-split>Merken die harder werken dan jij.</h1>
 
-      <div class="grid-2" style="grid-template-columns: 1.3fr .7fr; align-items:end; margin-top:2.4rem;">
+      <div class="grid-2 hero-split" style="align-items:end; margin-top:2.4rem;">
         <p class="lead" data-reveal>Branding, webdesign, development, content en marketing, uit één lab. Wij mixen strategie met lef tot groei die je terugziet in de cijfers.</p>
         <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:flex-start;" data-reveal>
           <a href="/contact/" class="btn btn--lime magnetic" data-cursor="Boeken">
@@ -155,10 +154,27 @@
         <img src="/assets/img/hero-team-1.jpg" alt="Boost Lab aan het werk" class="hero-media__img">
         <span class="hero-media__badge">● Aan het werk</span>
       </div>
-      <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; margin-top:1.6rem;" aria-hidden="true">
-        <div class="chip chip--filled float">12 cases online</div>
-        <div class="chip chip--lime float float--delay">Reactie binnen 1 werkdag</div>
-        <div class="chip chip--filled float float--slow">Gevestigd in Tilburg</div>
+      <div class="usp-strip" data-stagger>
+        <div class="usp-strip__item">
+          <span class="usp-strip__num">01</span>
+          <h3>Direct contact met de maker</h3>
+          <p>Je spreekt de mensen die je site en merk bouwen. Geen accountmanager ertussen.</p>
+        </div>
+        <div class="usp-strip__item">
+          <span class="usp-strip__num">02</span>
+          <h3>Heldere prijs vooraf</h3>
+          <p>Je weet vooraf wat je krijgt en wat het kost. Geen verrassingen achteraf.</p>
+        </div>
+        <div class="usp-strip__item">
+          <span class="usp-strip__num">03</span>
+          <h3>Alles blijft van jou</h3>
+          <p>Geen verplichte abonnementen. Je website en huisstijl zijn volledig van jou.</p>
+        </div>
+        <div class="usp-strip__item">
+          <span class="usp-strip__num">04</span>
+          <h3>Reactie binnen één werkdag</h3>
+          <p>Korte lijnen vanuit Tilburg, ook als je site allang live staat.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -256,50 +272,48 @@
     </div>
   </section>
 
-  <!-- FEATURED PROJECTS -->
+  <!-- RECENT WERK -->
   <section class="section bg-paper-dim">
     <div class="wrap">
-      <div class="grid-2" style="align-items:flex-end; margin-bottom:clamp(2.5rem,5vw,4rem);">
-        <div>
-          <p class="eyebrow" data-reveal>Uitgelicht werk</p>
-          <h2 style="font-size:var(--fs-h2); max-width:14ch;" data-split>Resultaat dat je kunt navertellen.</h2>
-        </div>
-        <a href="/cases/" class="btn btn--ghost magnetic" style="justify-self:flex-start;" data-cursor="Alles">
-          <span>Alle cases</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+      <div class="work-head">
+        <p class="eyebrow" data-reveal>Recent werk</p>
+        <h2 data-split>Sites die we recent hebben gebouwd.</h2>
+        <p class="lead" data-reveal>Van showroom tot fysiopraktijk: echte projecten voor ondernemers uit de regio.</p>
+      </div>
+
+      <div class="work-grid" data-stagger>
+        <a href="/cases/vloerenspecialist/" class="work-card" data-cursor="Bekijk case">
+          <div class="work-card__bar" aria-hidden="true"><span class="work-card__dot"></span><span class="work-card__dot"></span><span class="work-card__dot"></span><span class="work-card__url">vloerenspecialist-tilburg</span></div>
+          <div class="work-card__shot"><img src="/assets/img/case-vloerenspecialist.jpg" alt="Homepage van de website van Vloerenspecialist Tilburg" loading="lazy"></div>
+          <div class="work-card__body">
+            <div class="work-card__title"><h3>Vloerenspecialist Tilburg</h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+            <p>Een nieuwe website voor een showroom van 1.800&nbsp;m², inclusief migratie en doorlopend onderhoud.</p>
+            <div class="work-card__tags"><span class="tag">Webdesign</span><span class="tag tag--lime">Development</span><span class="tag tag--coral">Onderhoud</span></div>
+          </div>
+        </a>
+        <a href="/cases/spapens-kleeft/" class="work-card" data-cursor="Bekijk case">
+          <div class="work-card__bar" aria-hidden="true"><span class="work-card__dot"></span><span class="work-card__dot"></span><span class="work-card__dot"></span><span class="work-card__url">spapens-kleeft</span></div>
+          <div class="work-card__shot"><img src="/assets/img/case-spapens-kleeft.jpg" alt="Homepage van de website van Spapens Kleeft" loading="lazy"></div>
+          <div class="work-card__body">
+            <div class="work-card__title"><h3>Spapens Kleeft</h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+            <p>Een strakke website voor een specialist in folie en signing, waarin het vakmanschap voorop staat.</p>
+            <div class="work-card__tags"><span class="tag">Webdesign</span><span class="tag tag--lime">Development</span></div>
+          </div>
+        </a>
+        <a href="/cases/fysiofit-hilvarenbeek/" class="work-card" data-cursor="Bekijk case">
+          <div class="work-card__bar" aria-hidden="true"><span class="work-card__dot"></span><span class="work-card__dot"></span><span class="work-card__dot"></span><span class="work-card__url">fysiofit-hilvarenbeek</span></div>
+          <div class="work-card__shot"><img src="/assets/img/case-fysiofit.jpg" alt="Homepage van de website van FysioFit Hilvarenbeek" loading="lazy"></div>
+          <div class="work-card__body">
+            <div class="work-card__title"><h3>FysioFit Hilvarenbeek</h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+            <p>Een nieuwe huisstijl en een maatwerk website voor een fysiotherapiepraktijk in Hilvarenbeek.</p>
+            <div class="work-card__tags"><span class="tag tag--coral">Branding</span><span class="tag">Webdesign</span><span class="tag tag--lime">Development</span></div>
+          </div>
         </a>
       </div>
 
-      <div class="grid-3" data-stagger>
-        <a href="/cases/coca-cola/" class="card magnetic" data-cursor="Bekijk case" style="overflow:hidden; padding:0;">
-          <img src="/assets/img/case-coca-cola.jpg" alt="Coca-Cola Europacific Partners project" style="aspect-ratio:4/3; object-fit:cover;" loading="lazy">
-          <div style="padding:1.6rem;">
-            <div style="display:flex; gap:.5rem; margin-bottom:.9rem; flex-wrap:wrap;">
-              <span class="chip">Grafisch</span>
-            </div>
-            <h3 style="font-size:1.3rem;">Coca-Cola Europacific Partners</h3>
-            <p style="margin-top:.5rem; color:var(--text-on-paper-70); font-size:var(--fs-small);">Verpakkingsontwerp en de interne <strong>Zero Harm Week</strong>-campagne.</p>
-          </div>
-        </a>
-        <a href="/cases/interlude/" class="card magnetic" data-cursor="Bekijk case" style="overflow:hidden; padding:0;">
-          <img src="/assets/img/case-interlude.jpg" alt="INTERLUDE project" style="aspect-ratio:4/3; object-fit:cover;" loading="lazy">
-          <div style="padding:1.6rem;">
-            <div style="display:flex; gap:.5rem; margin-bottom:.9rem; flex-wrap:wrap;">
-              <span class="chip">Branding</span><span class="chip">Identiteit</span>
-            </div>
-            <h3 style="font-size:1.3rem;">INTERLUDE</h3>
-            <p style="margin-top:.5rem; color:var(--text-on-paper-70); font-size:var(--fs-small);">Een kledingmerk <strong>volledig gebouwd</strong> vanaf de basis.</p>
-          </div>
-        </a>
-        <a href="/cases/vloerenspecialist/" class="card magnetic" data-cursor="Bekijk case" style="overflow:hidden; padding:0;">
-          <img src="/assets/img/case-vloerenspecialist.jpg" alt="Vloerenspecialist Tilburg project" style="aspect-ratio:4/3; object-fit:cover;" loading="lazy">
-          <div style="padding:1.6rem;">
-            <div style="display:flex; gap:.5rem; margin-bottom:.9rem; flex-wrap:wrap;">
-              <span class="chip">Websites</span>
-            </div>
-            <h3 style="font-size:1.3rem;">Vloerenspecialist Tilburg</h3>
-            <p style="margin-top:.5rem; color:var(--text-on-paper-70); font-size:var(--fs-small);">Redesign, migratie en <strong>doorlopend onderhoud</strong>.</p>
-          </div>
+      <div class="work-more" data-reveal>
+        <a href="/cases/" class="btn btn--ghost magnetic" data-cursor="Alles"><span>Bekijk al ons werk</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </a>
       </div>
     </div>
