@@ -204,6 +204,18 @@
     });
   })();
 
+  /* ---------- Kinetic text split ----------
+     Moet vóór de scroll reveal draaien: die zoekt naar .kinetic, en die klasse
+     wordt hier pas gezet. Anders blijven [data-split]-koppen onzichtbaar. */
+  document.querySelectorAll('[data-split]').forEach(function(el){
+    var text = el.textContent.trim();
+    var words = text.split(/\s+/);
+    el.innerHTML = words.map(function(w){
+      return '<span class="word"><span>'+w+'&nbsp;</span></span>';
+    }).join('');
+    el.classList.add('kinetic');
+  });
+
   /* ---------- Scroll reveal ---------- */
   var revealEls = document.querySelectorAll('[data-reveal], [data-reveal-scale], [data-reveal-left], [data-reveal-right], [data-stagger], .kinetic');
   if('IntersectionObserver' in window && revealEls.length){
@@ -219,16 +231,6 @@
   } else {
     revealEls.forEach(function(el){ el.classList.add('is-visible'); });
   }
-
-  /* ---------- Kinetic text split ---------- */
-  document.querySelectorAll('[data-split]').forEach(function(el){
-    var text = el.textContent.trim();
-    var words = text.split(/\s+/);
-    el.innerHTML = words.map(function(w){
-      return '<span class="word"><span>'+w+'&nbsp;</span></span>';
-    }).join('');
-    el.classList.add('kinetic');
-  });
 
   /* ---------- Marquee auto-duplicate for seamless loop ---------- */
   document.querySelectorAll('.marquee__track').forEach(function(track){
