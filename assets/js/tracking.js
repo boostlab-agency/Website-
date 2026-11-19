@@ -59,6 +59,10 @@
     });
   }
 
+  /* Zonder cookie-toestemming de Google Ads klik-ID (gclid) via de URL doorgeven,
+     zodat leads van bezoekers die cookies weigeren toch aan de advertentie gekoppeld worden. */
+  gtag('set', 'url_passthrough', true);
+
   var stored = readConsent();
   if (stored) applyConsent(stored);
 
