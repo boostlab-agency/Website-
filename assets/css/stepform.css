@@ -2,6 +2,8 @@
    STAPPENFORMULIER (landingspagina's, zie assets/js/stepform.js)
    ========================================================================== */
 .lp-hero__form{ position:relative; }
+/* overflow:clip i.p.v. hidden: voorkomt dat de hero opzij schuift als een optie focus krijgt */
+.lp-hero:has(.lp-hero__form){ overflow:clip; }
 .lp-hero__form .lp-sticker{ top:-2.2rem; right:-1.4rem; }
 .sf{
   position:relative; background:var(--paper); color:var(--ink);
