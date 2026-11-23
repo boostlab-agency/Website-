@@ -17,7 +17,7 @@ function buildInternalEmail({ name, email, company, budget, service, message }) 
       <p style="margin:0 0 .6em;"><strong>Indicatief budget:</strong> ${escapeHtml(budget) || '-'}</p>
       <p style="margin:0 0 .6em;"><strong>Interesse in:</strong> ${escapeHtml(service) || '-'}</p>
       <p style="margin:1.2em 0 .3em;"><strong>Bericht:</strong></p>
-      <p style="margin:0; white-space:pre-line;">${escapeHtml(message)}</p>
+      <p style="margin:0;">${escapeHtml(message).replace(/\n/g, '<br>')}</p>
     </div>
   `;
 }
