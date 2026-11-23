@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Space+Mono:wght@400;700&display=swap">
 <link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/stepform.css">
 <script src="/assets/js/tracking.js" defer></script>
 <link rel="canonical" href="https://boostlab-agency.nl/website-laten-maken-tilburg/">
 <meta property="og:type" content="website">
@@ -125,7 +126,6 @@
         <h1>Website laten maken in Tilburg, <span class="hl">vanaf €450</span></h1>
         <p class="lp-hero__lead">Een snelle website die gevonden wordt en aanvragen oplevert. Gemaakt door een webbureau uit Tilburg, met een vaste prijs vooraf en direct contact met de makers.</p>
         <div class="lp-hero__ctas">
-          <a href="#aanvraag" class="btn btn--lime magnetic" data-cursor="Aanvragen"><span>Vraag een vrijblijvend voorstel aan</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
           <a href="tel:+31642822966" class="btn btn--ghost magnetic" data-cursor="Bellen"><span>Bel ons direct</span></a>
         </div>
         <ul class="lp-checks">
@@ -135,13 +135,50 @@
           <li>Direct contact met de maker</li>
         </ul>
       </div>
-      <div class="lp-hero__visual">
+      <div class="lp-hero__form" id="start">
         <div class="lp-sticker" aria-hidden="true"><small>vanaf</small><strong>€450</strong><small>excl. btw</small></div>
-        <div class="work-card">
-          <div class="work-card__bar" aria-hidden="true"><span class="work-card__dot"></span><span class="work-card__dot"></span><span class="work-card__dot"></span><span class="work-card__url">spapenskleeft.nl</span></div>
-          <div class="work-card__shot"><img src="/assets/img/case-spapens-kleeft.jpg" alt="Homepage van de website van Spapens Kleeft" fetchpriority="high"></div>
+        <form class="sf" novalidate data-service="Website laten maken Tilburg">
+        <p class="sf-title">Plan een gratis kennismaking</p>
+        <p class="sf-sub">30 minuten, bij jou op de zaak, bij ons of online. Geen verplichtingen.</p>
+        <div class="sf-progress" aria-hidden="true"><span class="sf-progress__fill"></span></div>
+        <div class="sf-meta"><span class="sf-count">Stap 1 van 4</span><button type="button" class="sf-back" hidden>&larr; Terug</button></div>
+          <fieldset class="sf-step"><legend class="sf-q" tabindex="-1">Wat heb je nu?</legend><div class="sf-options">
+          <label class="sf-opt"><input type="radio" name="sf-top-s1" value="Nog geen website"><span class="sf-opt__dot" aria-hidden="true"></span>Nog geen website</label>
+          <label class="sf-opt"><input type="radio" name="sf-top-s1" value="Een verouderde website"><span class="sf-opt__dot" aria-hidden="true"></span>Een verouderde website</label>
+          <label class="sf-opt"><input type="radio" name="sf-top-s1" value="Een website die weinig oplevert"><span class="sf-opt__dot" aria-hidden="true"></span>Een website die weinig oplevert</label>
+          <label class="sf-opt"><input type="radio" name="sf-top-s1" value="Iets anders"><span class="sf-opt__dot" aria-hidden="true"></span>Iets anders</label>
+          </div></fieldset>
+          <fieldset class="sf-step"><legend class="sf-q" tabindex="-1">Wat moet je website vooral opleveren?</legend><div class="sf-options">
+          <label class="sf-opt"><input type="radio" name="sf-top-s2" value="Meer offerteaanvragen"><span class="sf-opt__dot" aria-hidden="true"></span>Meer offerteaanvragen</label>
+          <label class="sf-opt"><input type="radio" name="sf-top-s2" value="Beter gevonden worden in Google"><span class="sf-opt__dot" aria-hidden="true"></span>Beter gevonden worden in Google</label>
+          <label class="sf-opt"><input type="radio" name="sf-top-s2" value="Professioneler overkomen"><span class="sf-opt__dot" aria-hidden="true"></span>Professioneler overkomen</label>
+          <label class="sf-opt"><input type="radio" name="sf-top-s2" value="Online verkopen"><span class="sf-opt__dot" aria-hidden="true"></span>Online verkopen</label>
+          </div></fieldset>
+          <fieldset class="sf-step"><legend class="sf-q" tabindex="-1">Wanneer wil je starten?</legend><div class="sf-options">
+          <label class="sf-opt"><input type="radio" name="sf-top-s3" value="Zo snel mogelijk"><span class="sf-opt__dot" aria-hidden="true"></span>Zo snel mogelijk</label>
+          <label class="sf-opt"><input type="radio" name="sf-top-s3" value="Binnen 1 tot 3 maanden"><span class="sf-opt__dot" aria-hidden="true"></span>Binnen 1 tot 3 maanden</label>
+          <label class="sf-opt"><input type="radio" name="sf-top-s3" value="Later dit jaar"><span class="sf-opt__dot" aria-hidden="true"></span>Later dit jaar</label>
+          <label class="sf-opt"><input type="radio" name="sf-top-s3" value="Ik ben me nog aan het oriënteren"><span class="sf-opt__dot" aria-hidden="true"></span>Ik ben me nog aan het oriënteren</label>
+          </div></fieldset>
+        <fieldset class="sf-step"><legend class="sf-q" tabindex="-1">Waar mogen we je bereiken?</legend>
+          <div class="sf-fields">
+            <div class="sf-field"><label for="sf-top-name">Naam *</label><input type="text" id="sf-top-name" name="name" required autocomplete="name" placeholder="Je naam"></div>
+            <div class="sf-field"><label for="sf-top-phone">Telefoon</label><input type="tel" id="sf-top-phone" name="phone" autocomplete="tel" placeholder="06 12345678"></div>
+            <div class="sf-field"><label for="sf-top-email">E-mail *</label><input type="email" id="sf-top-email" name="email" required autocomplete="email" placeholder="jij@bedrijf.nl"></div>
+            <div class="sf-field sf-site" hidden><label for="sf-top-site">Huidige website</label><input type="text" id="sf-top-site" name="site" inputmode="url" placeholder="www.jouwbedrijf.nl"></div>
+            <div class="sf-hp" aria-hidden="true"><label for="sf-top-hp">Laat dit veld leeg</label><input type="text" id="sf-top-hp" name="company_site" tabindex="-1" autocomplete="off"></div>
+          </div>
+          <button type="submit" class="btn sf-submit"><span>Plan mijn kennismaking</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></button>
+          <p class="sf-privacy">We gebruiken je gegevens alleen om contact met je op te nemen.</p>
+          <p class="sf-status" role="status" aria-live="polite"></p>
+        </fieldset>
+        <div class="sf-done" hidden>
+          <div class="sf-done__icon" aria-hidden="true"></div>
+          <p class="sf-done__name" tabindex="-1">Bedankt!</p>
+          <p>Je aanvraag is binnen. We nemen binnen 1 werkdag contact met je op om de kennismaking te plannen. Liever nu meteen? Bel <a href="tel:+31642822966">06 42 82 29 66</a>.</p>
         </div>
-        <p class="lp-hero__caption">Recent door ons gebouwd: <a href="https://spapenskleeft.nl/" target="_blank" rel="noopener">spapenskleeft.nl</a></p>
+        <p class="sf-foot">Reactie binnen 1 werkdag, van de maker zelf</p>
+      </form>
       </div>
     </div>
   </section>
@@ -255,24 +292,56 @@
       <div>
         <p class="eyebrow" data-reveal>Vrijblijvend voorstel</p>
         <h2 style="font-size:var(--fs-h2); max-width:14ch; color:var(--paper);" data-split>Benieuwd wat wij voor jou kunnen doen?</h2>
-        <p style="margin-top:1.2rem; color:var(--text-on-ink-70); line-height:1.7; max-width:44ch;" data-reveal>Vul het formulier in en je hoort binnen 1 werkdag van ons. Liever direct praten? Bel <a href="tel:+31642822966" style="color:var(--lime);">06 42 82 29 66</a> of stuur een WhatsApp.</p>
+        <p style="margin-top:1.2rem; color:var(--text-on-ink-70); line-height:1.7; max-width:44ch;" data-reveal>Beantwoord drie korte vragen en je hoort binnen 1 werkdag van ons. Liever direct praten? Bel <a href="tel:+31642822966" style="color:var(--lime);">06 42 82 29 66</a> of stuur een WhatsApp.</p>
       </div>
-      <form id="lpForm" class="form-card" novalidate data-reveal data-service="Website laten maken Tilburg">
-        <div class="field"><label for="lpName">Naam *</label><input type="text" id="lpName" placeholder="Je naam" required autocomplete="name"></div>
-        <div class="field"><label for="lpEmail">E-mail *</label><input type="email" id="lpEmail" placeholder="jij@bedrijf.nl" required autocomplete="email"></div>
-        <div class="field"><label for="lpPhone">Telefoon</label><input type="tel" id="lpPhone" placeholder="06 12345678" autocomplete="tel"></div>
-        <div class="field"><label for="lpCompany">Bedrijfsnaam</label><input type="text" id="lpCompany" placeholder="Jouw bedrijf in Tilburg" autocomplete="organization"></div>
-        <div class="field"><label for="lpSite">Huidige website</label><input type="text" id="lpSite" placeholder="www.jouwbedrijf.nl (als je die hebt)"></div>
-        <div class="field"><label for="lpMsg">Wat wil je bereiken?</label><textarea id="lpMsg" rows="3" placeholder="Bijvoorbeeld: nieuwe website, meer aanvragen, beter gevonden worden"></textarea></div>
-        <button type="submit" class="btn btn--lime" style="width:100%; justify-content:center;"><span>Verstuur aanvraag</span></button>
-        <p id="lpStatus" class="form-status" role="status" aria-live="polite" style="margin-top:1rem;"></p>
+      <form class="sf" novalidate data-service="Website laten maken Tilburg" data-reveal>
+        <p class="sf-title">Plan een gratis kennismaking</p>
+        <p class="sf-sub">30 minuten, bij jou op de zaak, bij ons of online. Geen verplichtingen.</p>
+        <div class="sf-progress" aria-hidden="true"><span class="sf-progress__fill"></span></div>
+        <div class="sf-meta"><span class="sf-count">Stap 1 van 4</span><button type="button" class="sf-back" hidden>&larr; Terug</button></div>
+          <fieldset class="sf-step"><legend class="sf-q" tabindex="-1">Wat heb je nu?</legend><div class="sf-options">
+          <label class="sf-opt"><input type="radio" name="sf-bottom-s1" value="Nog geen website"><span class="sf-opt__dot" aria-hidden="true"></span>Nog geen website</label>
+          <label class="sf-opt"><input type="radio" name="sf-bottom-s1" value="Een verouderde website"><span class="sf-opt__dot" aria-hidden="true"></span>Een verouderde website</label>
+          <label class="sf-opt"><input type="radio" name="sf-bottom-s1" value="Een website die weinig oplevert"><span class="sf-opt__dot" aria-hidden="true"></span>Een website die weinig oplevert</label>
+          <label class="sf-opt"><input type="radio" name="sf-bottom-s1" value="Iets anders"><span class="sf-opt__dot" aria-hidden="true"></span>Iets anders</label>
+          </div></fieldset>
+          <fieldset class="sf-step"><legend class="sf-q" tabindex="-1">Wat moet je website vooral opleveren?</legend><div class="sf-options">
+          <label class="sf-opt"><input type="radio" name="sf-bottom-s2" value="Meer offerteaanvragen"><span class="sf-opt__dot" aria-hidden="true"></span>Meer offerteaanvragen</label>
+          <label class="sf-opt"><input type="radio" name="sf-bottom-s2" value="Beter gevonden worden in Google"><span class="sf-opt__dot" aria-hidden="true"></span>Beter gevonden worden in Google</label>
+          <label class="sf-opt"><input type="radio" name="sf-bottom-s2" value="Professioneler overkomen"><span class="sf-opt__dot" aria-hidden="true"></span>Professioneler overkomen</label>
+          <label class="sf-opt"><input type="radio" name="sf-bottom-s2" value="Online verkopen"><span class="sf-opt__dot" aria-hidden="true"></span>Online verkopen</label>
+          </div></fieldset>
+          <fieldset class="sf-step"><legend class="sf-q" tabindex="-1">Wanneer wil je starten?</legend><div class="sf-options">
+          <label class="sf-opt"><input type="radio" name="sf-bottom-s3" value="Zo snel mogelijk"><span class="sf-opt__dot" aria-hidden="true"></span>Zo snel mogelijk</label>
+          <label class="sf-opt"><input type="radio" name="sf-bottom-s3" value="Binnen 1 tot 3 maanden"><span class="sf-opt__dot" aria-hidden="true"></span>Binnen 1 tot 3 maanden</label>
+          <label class="sf-opt"><input type="radio" name="sf-bottom-s3" value="Later dit jaar"><span class="sf-opt__dot" aria-hidden="true"></span>Later dit jaar</label>
+          <label class="sf-opt"><input type="radio" name="sf-bottom-s3" value="Ik ben me nog aan het oriënteren"><span class="sf-opt__dot" aria-hidden="true"></span>Ik ben me nog aan het oriënteren</label>
+          </div></fieldset>
+        <fieldset class="sf-step"><legend class="sf-q" tabindex="-1">Waar mogen we je bereiken?</legend>
+          <div class="sf-fields">
+            <div class="sf-field"><label for="sf-bottom-name">Naam *</label><input type="text" id="sf-bottom-name" name="name" required autocomplete="name" placeholder="Je naam"></div>
+            <div class="sf-field"><label for="sf-bottom-phone">Telefoon</label><input type="tel" id="sf-bottom-phone" name="phone" autocomplete="tel" placeholder="06 12345678"></div>
+            <div class="sf-field"><label for="sf-bottom-email">E-mail *</label><input type="email" id="sf-bottom-email" name="email" required autocomplete="email" placeholder="jij@bedrijf.nl"></div>
+            <div class="sf-field sf-site" hidden><label for="sf-bottom-site">Huidige website</label><input type="text" id="sf-bottom-site" name="site" inputmode="url" placeholder="www.jouwbedrijf.nl"></div>
+            <div class="sf-hp" aria-hidden="true"><label for="sf-bottom-hp">Laat dit veld leeg</label><input type="text" id="sf-bottom-hp" name="company_site" tabindex="-1" autocomplete="off"></div>
+          </div>
+          <button type="submit" class="btn sf-submit"><span>Plan mijn kennismaking</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></button>
+          <p class="sf-privacy">We gebruiken je gegevens alleen om contact met je op te nemen.</p>
+          <p class="sf-status" role="status" aria-live="polite"></p>
+        </fieldset>
+        <div class="sf-done" hidden>
+          <div class="sf-done__icon" aria-hidden="true"></div>
+          <p class="sf-done__name" tabindex="-1">Bedankt!</p>
+          <p>Je aanvraag is binnen. We nemen binnen 1 werkdag contact met je op om de kennismaking te plannen. Liever nu meteen? Bel <a href="tel:+31642822966">06 42 82 29 66</a>.</p>
+        </div>
+        <p class="sf-foot">Reactie binnen 1 werkdag, van de maker zelf</p>
       </form>
     </div>
   </section>
 
 </main>
 <div class="lp-callbar"><a href="tel:+31642822966">Bellen</a><a href="#aanvraag" class="alt">Aanvragen</a></div>
-<script src="/assets/js/landing.js" defer></script>
+<script src="/assets/js/stepform.js" defer></script>
 
 <footer class="footer">
   <div class="blob-field" aria-hidden="true">
