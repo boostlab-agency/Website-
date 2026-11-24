@@ -50,6 +50,8 @@
         service: document.getElementById('service').value,
         message: document.getElementById('message').value.trim()
       };
+      var phoneEl = document.getElementById('phone');
+      if(phoneEl && phoneEl.value.trim()) payload.message += '\n\nTelefoon: ' + phoneEl.value.trim();
 
       fetch('/api/contact', {
         method: 'POST',
